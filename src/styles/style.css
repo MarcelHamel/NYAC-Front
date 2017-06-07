@@ -5,6 +5,8 @@
 /* 1. General document styling (HTML, BODY)
    2. Header
       2a. Nav bar
+   3. Landing page
+    3a. How We Adventure
 
 
 */
@@ -13,7 +15,8 @@
 /*1. GENERAL DOCUMENT STYLING  */
 /*******************************/
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400');
 
 html, body {
   margin: 0;
@@ -27,6 +30,20 @@ form {
 
 input {
   display: block;
+}
+
+hr {
+  width: 90%;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  justify-content: space-around;
+  margin: 0 auto;
 }
 
 
@@ -109,6 +126,181 @@ nav a {
   display: flex;
   justify-content: space-around;
 }
+
+/*******************************/
+/*      3. LANDING PAGE        */
+/*******************************/
+
+/*    3a. How We Adventure     */
+
+#how-we-adventure {
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 6em auto;
+}
+
+#how-we-adventure h1 {
+  margin-bottom: 3em;
+}
+
+.adventure-item {
+  text-align: center;
+  width: 350px;
+}
+
+.adventure-item p {
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  line-height: 1.25em;
+  margin: 0.75em auto;
+}
+
+.adventure-title {
+  color: #DBA510;
+  height: 1em;
+}
+
+/*******************************/
+/*        Testimonials         */
+/*******************************/
+
+#testimonials {
+  height: 550px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  position: relative;
+}
+
+#testimonial-content {
+  height: 100%;
+  width: 680px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#testimonials h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  color: #FFF;
+  margin-top: 1.875em;
+}
+
+#testimonial-image {
+  height: 130px;
+  width: 130px;
+  margin-top: 1.675em;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+.testimonial-text {
+  width: 680px;
+  font-family: 'Merriweather', serif;
+  font-size: 1.5625em;
+  line-height: 1.5em;
+  text-align: center;
+  color: #FFF;
+}
+
+#testimonial-selector-panel {
+  display: flex;
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  bottom: 1em;
+  justify-content: center;
+}
+
+.testimonial-selector-button {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #9B9B9B;
+  margin: 0 12px;
+}
+
+.tsb-active {
+  background-color: #FFF;
+}
+
+/*******************************/
+/*  Landing Newsletter Signup  */
+/*******************************/
+
+#newsletter-landing-page-sign-up {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 6.25em;
+}
+
+#newsletter-landing-button {
+  height: 80px;
+  width: 500px;
+  margin-top: 2.5em;
+  border-radius: 4px;
+  border: none;
+  background-color: #DBA510;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.6em;
+  color: #FFF;
+}
+
+/*******************************/
+/*           Footer            */
+/*******************************/
+
+footer {
+  text-align: center;
+  width: 100%;
+  height: 4em;
+  background: #000;
+  color: #EFEFEF;
+}
+
+.footer-links {
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  width: 676px;
+  padding-left: 200px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.footer-links a {
+  color: #EFEFEF;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #DBA510;
+}
+
+.social-media-icons {
+  width: 200px;
+  height: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  float: right;
+}
+
+.social-media-icons img {
+  height: 45px;
+  width: 45px;
+}
+
 
 /*******************************/
 /*  LAST. SUBSCRIPTION MODALS  */

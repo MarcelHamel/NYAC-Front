@@ -12,7 +12,13 @@ export default class SubscriptionButton extends Component {
   }
 
   render() {
-    if (this.props.buttonType === 'nav-subscribe-button') {
+     if (this.props.buttonType === 'newsletter-landing-button') {
+      return (
+        <div>
+          <button id="newsletter-landing-button">SUBSCRIBE TO THE NEWSLETTER</button>
+        </div>
+      )
+    } else {
       return (
         <div>
           <button id="nav-subscribe-button">SUBSCRIBE</button>
