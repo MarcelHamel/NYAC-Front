@@ -10,17 +10,17 @@ export default class Testimonials extends Component {
       quotes: [
         {image: 'marcel.jpg',
          quote: 'New York Adventure Club is swell! I had the time of my life exploring the subway system! You can\'t afford NOT to afford one of these exquisite tours.',
-         name: 'Marcel H.',
+         name: 'Marcel',
         },
-        {image: 'marcel.jpg',
-         quote: 'Is so great. Is in no way trap. Definitely not trap.',
-         name: 'Evil Marcel H.',
+        {image: 'warcel.jpg',
+         quote: 'It is so great, and is in no way trap. Definitely not trap.',
+         name: 'Warcel',
         }
       ],
       currentQuote: {
         image: 'marcel.jpg',
         quote: 'New York Adventure Club is swell! I had the time of my life exploring the subway system! You can\'t afford NOT to afford one of these exquisite tours.',
-        name: 'Marcel H.',
+        name: 'Marcel',
       },
       currentIndex: 0,
     }

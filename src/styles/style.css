@@ -53,12 +53,12 @@ hr {
 
 header {
   width: 100%;
-  padding-top: 1em;
+  padding-top: 1.5em;
   background-size: cover;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   color: #FFF;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5)
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 #landing-header {
@@ -86,7 +86,7 @@ header {
   background-color: #FFFFFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
   padding-left: 1em;
-  font-size: 1.6em;
+  font-size: 1em;
 }
 
 /*******************************/
@@ -94,7 +94,7 @@ header {
 /*******************************/
 
 nav {
-  width: 95%;
+  width: 97%;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -125,6 +125,11 @@ nav a {
   width: calc(100% - 143px);
   display: flex;
   justify-content: space-around;
+}
+
+nav img {
+  -webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
 }
 
 /*******************************/
