@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const NavLinks = () => {
   return (
-    <div id="nav-links">
+    <div id="nav-links" className="text-shadow">
       <Link to="#">TOURS</Link>
       <Link to="#">ACTIVITES</Link>
       <Link to="#">HIDDEN SPOTS</Link>

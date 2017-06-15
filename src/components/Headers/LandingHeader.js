@@ -9,10 +9,12 @@ export default class LandingHeader extends Component {
   render() {
     return(
       <header id="landing-header">
-        <Nav />
-        <div id="landing-header-content">
-          <h1>Unlock Your City</h1>
-          <input type="text" placeholder="Search for your adventure" />
+        <div id="header-overlay">
+          <Nav />
+          <div id="landing-header-content">
+            <h1>Unlock Your City</h1>
+            <input type="text" placeholder="Search for your adventure" />
+          </div>
         </div>
       </header>
     )

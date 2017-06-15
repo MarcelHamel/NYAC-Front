@@ -8,19 +8,27 @@ export default class Testimonials extends Component {
 
     this.state = {
       quotes: [
-        {image: 'marcel.jpg',
-         quote: 'New York Adventure Club is swell! I had the time of my life exploring the subway system! You can\'t afford NOT to afford one of these exquisite tours.',
-         name: 'Marcel',
+        {image: 'rosie.jpg',
+         quote: 'After living in NYC for  over 10 years, I really loved finding a place that I had never been to! I absolutely love that the NYAC exists for those days when I feel like being a (secret) tourist.',
+         name: 'Rosie C.'
         },
-        {image: 'warcel.jpg',
-         quote: 'It is so great, and is in no way trap. Definitely not trap.',
-         name: 'Warcel',
+        {image: 'grant.jpg',
+         quote: ' Great group to see interesting places throughout NYC and meet awesome people. I\'ve made new friends and have seen cool stuff I didn\'t even know existed in New York. Well worth checking out.',
+         name: 'Grant F.'
+        },
+        {image: 'amanda.jpg',
+         quote: 'Everything is super reasonably priced and very accessible, something for everyone and lots of things that you would never know were out there. Highly recommend.',
+         name: 'Amanda B.'
+        },
+        {image: 'franklin.jpg',
+         quote: 'The weekly newsletter is astoundingly comprehensive, offering an immediate panorama of choice sights and sounds of the five boroughs and suburbs.',
+         name: 'Franklin H.'
         }
       ],
       currentQuote: {
-        image: 'marcel.jpg',
-        quote: 'New York Adventure Club is swell! I had the time of my life exploring the subway system! You can\'t afford NOT to afford one of these exquisite tours.',
-        name: 'Marcel',
+        image: 'rosie.jpg',
+         quote: 'After living in NYC for  over 10 years, I really loved finding a place that I had never been to! I absolutely love that the NYAC exists for those days when I feel like being a (secret) tourist.',
+         name: 'Rosie C.'
       },
       currentIndex: 0,
     }

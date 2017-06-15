@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 
 import LandingHeader from '../Headers/LandingHeader';
 import HowWeAdventure from './HowWeAdventure/HowWeAdventure';
+import CategoryPreview from './CategoryPreview/CategoryPreview';
+import LandingEventPreview from './LandingEventPreview/LandingEventPreview';
 import Testimonials from './Testimonials/Testimonials';
 import NewsletterSignUp from './NewsletterSignUp/NewsletterSignUp';
 import NYACFooter from '../NYACFooter/NYACFooter';
@@ -23,6 +25,8 @@ export default class Main extends Component {
         <LandingHeader />
         <HowWeAdventure />
         <hr />
+        <CategoryPreview />
+        <LandingEventPreview />
         <Testimonials />
         <NewsletterSignUp />
         <NYACFooter />

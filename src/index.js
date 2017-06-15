@@ -6,9 +6,11 @@ import './styles/normalize.css';
 import './styles/style.css';
 
 import Main from './components/Main/Main';
+import SingleEvent from './components/SingleEvent/SingleEvent';
 
 ReactDom.render(
   <Router history={browserHistory}>
     <Route path="/" component={Main} />
+    <Route path="/:id" component={SingleEvent} />
   </Router>,
   document.getElementById('app'));

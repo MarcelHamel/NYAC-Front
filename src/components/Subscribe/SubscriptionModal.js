@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
-import Axios from 'axios';
 
 export default class SubscriptionModal extends Component {
   constructor() {
