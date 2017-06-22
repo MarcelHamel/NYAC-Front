@@ -33,7 +33,10 @@ export default class SingleEvent extends Component {
         venue: {
           address: {
             city: '',
-            localized_multi_line_address_display: []
+            localized_multi_line_address_display: [],
+            localized_address_display: '',
+            latitude: '',
+            longitude: ''
           }
         }
       }

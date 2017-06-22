@@ -43,9 +43,24 @@ hr {
 
 .container {
   display: flex;
+  width: 90%;
   max-width: 1200px;
   justify-content: space-around;
   margin: 0 auto;
+}
+
+.flex-column {
+  flex-direction: column;
+  align-items: center;
+  margin: 2em auto;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.center-text {
+  text-align: center;
 }
 
 .text-shadow {
@@ -76,17 +91,28 @@ header {
   color: #FFF;
 }
 
-#landing-header {
+.content-header {
   height: 550px;
-  background-image: url('../images/landing-page-hero.jpg');
   text-align: center;
 }
 
-#header-overlay {
+.landing-header {
+  background-image: url('../images/landing-page-hero.jpg');
+}
+
+.private-events-header {
+  background-image: url('../images/private-events-hero.jpg');
+}
+
+.header-overlay {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0));
   width: 100%;
   height: 100%;
   padding-top: 1.5em;
+}
+
+.private-events-overlay {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6), rgba(0,0,0,0.5), rgba(0,0,0,0));
 }
 
 #universal-header {
@@ -94,7 +120,7 @@ header {
   background-position: center;
 }
 
-#landing-header-content {
+.header-content {
   height: 424px;
   display: flex;
   flex-direction: column;
@@ -102,11 +128,43 @@ header {
   justify-content: space-around;
 }
 
-#landing-header-content h1 {
+.private-header-content {
+  height: 350px;
+  font-size: 1.5em;
+}
+
+.private-header-content h1 {
+  margin: 0 auto;
+}
+
+.private-header-content p {
+  font-weight: 300;
+  letter-spacing: 1.6px;
+}
+
+#private-events-header-contact {
+  width: 470px;
+  height: 3em;
+  font-family: Raleway;
+  font-size: 1.2em;
+  letter-spacing: 2.4px;
+  color: #000;
+  background: #FFF;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+#private-events-header-contact:hover {
+  background: #BBB;
+}
+
+.header-content h1 {
   font-size: 3em;
 }
 
-#landing-header-content input {
+.header-content input {
   height: 60px;
   width: 538px;
   border-radius: 2px;
@@ -589,7 +647,7 @@ nav a:hover {
 #newsletter-landing-button {
   height: 80px;
   width: 500px;
-  margin-top: 2.5em;
+  margin-top: 2em;
   border-radius: 4px;
   border: none;
   background-color: #DBA510;
@@ -607,22 +665,23 @@ nav a:hover {
 
 footer {
   text-align: center;
+  margin-top: 4em;
   width: 100%;
   min-height: 4em;
   background: #000;
   color: #EFEFEF;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
 .footer-links {
-  display: inline-flex;
-  height: 100%;
+  display: flex;
+  min-height: 80px;
   align-items: center;
   justify-content: space-around;
-  width: 676px;
-  padding-left: 200px;
+  width: 80%;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 1.25em;
@@ -639,12 +698,12 @@ footer {
 }
 
 .social-media-icons {
-  width: 200px;
+  width: 300px;
   height: 100%;
-  display: inline-flex;
+  display: flex;
   justify-content: space-around;
   align-items: center;
-  float: right;
+  margin-bottom: 1em;
 }
 
 .social-media-icons img {
@@ -722,23 +781,25 @@ footer {
 
 #single-event-content {
   margin-top: 1em;
-  width: 550px;
+  max-width: 550px;
   color: #000000;
   font-family: Merriweather;
   font-size: 1.125em;
   font-weight: bold;
   line-height: 1.875em;
+  margin-bottom: 2em;
 }
 
 #single-event-ticket-info {
   border: 2px solid #979797;
   width: 299px;
-  height: 500px;
+  height: 650px;
   background: #FFF;
   position: relative;
   bottom: 80px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
   padding-bottom: 2.75em;
+  flex-shrink: 0;
 }
 
 .ticket-details {
@@ -799,6 +860,7 @@ footer {
   letter-spacing: 1px;
   line-height: 30px;
   text-align: center;
+  transition: 0.3s;
 }
 
 #event-venue-details {
@@ -806,8 +868,9 @@ footer {
   font-family: Merriweather;
   line-height: 1.5em;
   font-weight: 300;
-  margin-left: 1.3em;
-  height: 250px;
+  margin-left: 1em;
+  width: calc(100% - 2em);
+  height: calc(100% - 250px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -821,6 +884,103 @@ footer {
 #event-venue-name {
   font-weight: 600;
 }
+
+#venue-map-container {
+  width: 100%;
+}
+
+#venue-map-container iframe {
+  width: 100%;
+  height: 250px;
+}
+
+/*******************************/
+/*           ABOUT             */
+/*******************************/
+
+#about {
+  font-family: Merriweather;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.875em;
+}
+
+#about p {
+  margin: 0.5em auto;
+}
+
+#about img {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  margin: 0 2em;
+}
+
+.about-content {
+  margin-top: 4em;
+}
+
+.who-we-are {
+  max-width: 960px;
+}
+
+/*******************************/
+/*       PRIVATE EVENTS        */
+/*******************************/
+
+#private-events iframe {
+  margin-top: 2em;
+  border: none;
+}
+
+.private-icon img {
+  /*margin: 1em auto;*/
+  transform: scale(0.5);
+}
+
+.private-icon {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+/*******************************/
+/*        PRESS KIT            */
+/*******************************/
+
+.press-kit-headline {
+  font-family: Raleway;
+  max-width: 700px;
+  text-align: center;
+  font-size: 1.35em;
+  line-height: 1.3em;
+  margin-bottom: 2em;
+}
+
+.press-clippings {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.press-kit-item {
+  width: 300px;
+  margin: 0 1em;
+}
+
+.press-kit-item h3 {
+  font-family: Raleway;
+  font-weight: 300;
+}
+
+.press-kit-item h5 {
+  font-family: Merriweather;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+
 /*******************************/
 /*    MEDIA QUERIES            */
 /*******************************/
@@ -871,18 +1031,22 @@ footer {
     right: 5px;
   }
 
-  .social-media-icons {
-    float: none;
-  }
-
-  .footer-links {
-    padding-left: 0;
-  }
 }
 
 @media (max-width: 1055px) {
   #category-preview-text {
     max-width: 45%;
+  }
+
+  #single-event-container {
+    justify-content: space-around;
+    max-width: calc(980px - 4em);
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+
+  #single-event-ticket-info {
+    margin-left: 2em;
   }
 }
 
@@ -933,7 +1097,8 @@ footer {
  }
 
  .footer-links {
-  margin: 1em 0;
+  width: 95%;
+  font-size: 1em;
  }
 
  .social-media-icons {
@@ -959,8 +1124,32 @@ footer {
   background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9));
  }
 
- .footer-links {
+ #single-event-container {
+  flex-direction: column;
+  margin-left: 2em;
+  margin-right: 2em;
+  width: calc(100% - 4em);
+ }
+
+ #single-event-ticket-info {
+  border: none;
+  box-shadow: none;
+  position: initial;
   width: 100%;
+  margin: 0 auto;
+  height: 800px;
+ }
+
+ #venue-map-container iframe {
+  height: 400px;
+ }
+
+ .ticket-details {
+  border-bottom: none;
+ }
+
+ #event-venue-details {
+  height: 40px;
  }
 
 }
@@ -988,6 +1177,11 @@ footer {
   hr {
     display: none;
   }
+
+  .menu-spacer {
+    display: none;
+  }
+
 }
 
 @media (max-width: 555px) {
@@ -1025,8 +1219,16 @@ footer {
   }
 
   .footer-links {
-    font-size: 1em;
+    flex-direction: column;
+    font-size: 1.25em;
+    margin: .5em auto;
   }
+
+  .footer-links a {
+    margin: .25em 0;
+    letter-spacing: 2px;
+  }
+
 }
 
 @media (max-width: 460px) {
@@ -1051,18 +1253,16 @@ footer {
     transform: scale(0.65);
   }
 
-  .footer-links {
-    flex-direction: column;
-    font-size: 1.25em;
+  #single-event-content {
+    font-size: 1em;
   }
 
-  .footer-links a {
-    margin: .25em 0;
-    letter-spacing: 2px;
-  }
-
-  .menu-spacer {
+  #venue-map-container {
     display: none;
+  }
+
+  #single-event-ticket-info {
+    height: 400px;
   }
 
 }
