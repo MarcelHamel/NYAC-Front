@@ -16,18 +16,18 @@ const About = () => {
           <p>Think after-hours tours of New York City’s most celebrated spaces, themed parties in unexpected locations, and weekend excursions to incredible destinations.</p>
         </div>
         <div className="container about-content">
-          <img src="../../images/about/lighthouse.jpg" />
+          <img src="../../images/about/lighthouse.jpg" className="about-img" />
           <div className="container flex-column center-text">
           <h1>THE ‘CLUB’ IN NEW YORK ADVENTURE CLUB</h1>
           <p>Our current community is more than 7,000 members strong and includes everyone from recent NYC transplants to lifelong residents. Whatever borough you’re from (or city or country, for that matter), we’ll make it easy for you to take full advantage of the unique places and great people this city has to offer.</p>
           </div>
         </div>
         <div className="container about-content">
+          <img src="../../images/about/tunnel.jpg" className="about-img" />
           <div className="container flex-column center-text">
             <h1>WHERE WE GO</h1>
             <p>To ensure a one-of-a-kind experience each and every time, we handpick events and outings specifically for the New York Adventure Club community.</p>
           </div>
-          <img src="../../images/about/tunnel.jpg" />
         </div>
         <div className="container flex-column about-content">
           <h1>JOIN NEW YORK ADVENTURE CLUB</h1>

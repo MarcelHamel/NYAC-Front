@@ -33,7 +33,7 @@ const PrivateEvents = () => {
           <img src="../../images/private-events/awards/yelp.jpg" />
           <img src="../../images/private-events/awards/nycandco.jpg" />
         </div>
-        <iframe width="952" height="536" src="https://www.youtube.com/embed/7dmiF78hCaw" frameborder="0" allowfullscreen></iframe>
+        <iframe width="952" height="536" src="https://www.youtube.com/embed/7dmiF78hCaw" frameBorder="0" allowFullScreen></iframe>
       </div>
       <NYACFooter />
     </div>

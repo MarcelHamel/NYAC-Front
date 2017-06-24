@@ -11,14 +11,20 @@ import About from './components/About/About';
 import PrivateEvents from './components/PrivateEvents/PrivateEvents';
 import PressKit from './components/PressKit/PressKit';
 import PhotoGallery from './components/PhotoGallery/PhotoGallery';
+import PhotoAlbum from './components/PhotoGallery/PhotoAlbum';
+import ShowPhoto from './components/PhotoGallery/ShowPhoto';
+import CategorySort from './components/CategorySort/CategorySort';
 
 ReactDom.render(
   <Router history={browserHistory}>
     <Route path="/" component={Main} />
     <Route path="/about" component={About} />
+    <Route path="/category" component={CategorySort} />
     <Route path="/private-events" component={PrivateEvents} />
     <Route path="/presskit" component={PressKit} />
     <Route path="/gallery" component={PhotoGallery} />
+    <Route path="/gallery/:id" component={PhotoAlbum} />
+    <Route path="/gallery/photo/:event_id/:id" component={ShowPhoto} />
     <Route path="/:id" component={SingleEvent} />
   </Router>,
   document.getElementById('app'));
