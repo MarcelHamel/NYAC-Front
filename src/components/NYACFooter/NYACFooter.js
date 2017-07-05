@@ -52,7 +52,7 @@ export default class NYACFooter extends Component {
 
     let body = JSON.stringify(this.state);
 
-    axios.post('/contact', {
+    axios.post('http://newyorkadventureclub-dev.us-east-1.elasticbeanstalk.com/contact', {
       data: body
     })
     .then(this.closeContactModal())

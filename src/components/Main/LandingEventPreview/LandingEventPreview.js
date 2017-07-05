@@ -19,7 +19,7 @@ export default class LandingEventPreview extends Component {
   }
 
   componentDidMount() {
-    axios.get('/events')
+    axios.get('http://newyorkadventureclub-dev.us-east-1.elasticbeanstalk.com/events')
     .then(response => this.setState({
       events: response.data,
       loading: false
