@@ -43,7 +43,7 @@ export default class SingleEvent extends Component {
   }
 
   componentWillMount() {
-    axios.get(`http://localhost:8000/events/${this.props.params.id}`)
+    axios.get(`/events/${this.props.params.id}`)
     .then((response) => {
       this.setState({ event: response.data })
     })

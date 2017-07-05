@@ -29,7 +29,7 @@ export default class SearchEvents extends Component {
 
   componentDidMount() {
     const title = this.props.params.name;
-    axios.get(`http://localhost:8000/events/search/${this.props.params.keyword}`)
+    axios.get(`/events/search/${this.props.params.keyword}`)
     .then(response => {
       this.setState({
         events: response.data,

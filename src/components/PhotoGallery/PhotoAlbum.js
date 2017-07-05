@@ -32,7 +32,7 @@ export default class PhotoAlbum extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:8000/photos/albums/${this.props.params.id}`)
+    axios.get(`/photos/albums/${this.props.params.id}`)
     .then(response => {
       this.setState({
         photos: response.data,

@@ -19,7 +19,7 @@ export default class LandingEventPreview extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8000/events')
+    axios.get('/events')
     .then(response => this.setState({
       events: response.data,
       loading: false

@@ -31,7 +31,7 @@ export default class CategorySort extends Component {
 
   componentDidMount() {
     const title = this.props.params.name;
-    axios.get(`http://localhost:8000/events/category/${this.props.params.name}`)
+    axios.get(`/category/${this.props.params.name}`)
     .then(response => {
       this.setState({
         events: response.data,

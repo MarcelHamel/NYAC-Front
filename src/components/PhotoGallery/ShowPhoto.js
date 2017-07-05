@@ -20,7 +20,7 @@ export default class ShowPhoto extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:8000/photos/event/${this.props.params.event_id}/photo/${this.props.params.id}`)
+    axios.get(`/photos/event/${this.props.params.event_id}/photo/${this.props.params.id}`)
     .then(response => {
       this.setState({ photo: response.data })
       console.log("data:", response.data);

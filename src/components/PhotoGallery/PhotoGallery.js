@@ -23,7 +23,7 @@ export default class PhotoGallery extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8000/photos')
+    axios.get('/photos')
     .then(response => {
       this.setState({
         albums: response.data,

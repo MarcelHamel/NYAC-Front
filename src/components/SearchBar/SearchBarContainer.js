@@ -25,7 +25,7 @@ export default class SearchBarContainer extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    window.location=`http://localhost:3000/search/${this.state.searchField}`;
+    window.location=`/search/${this.state.searchField}`;
   }
 
   render() {
