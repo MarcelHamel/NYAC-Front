@@ -6,7 +6,7 @@ const SingleEventContainer = (props) => {
   return (
     <div id="single-event-container">
       <SingleEventContent name={props.event.name.text} description={props.event.description.html} />
-      <SingleEventTicketInfo tickets={props.event.ticket_classes} start={props.event.start} end={props.event.end} venue={props.event.venue} />
+      <SingleEventTicketInfo tickets={props.event.ticket_classes} start={props.event.start} end={props.event.end} venue={props.event.venue} event_id={props.event.id} displayRedirectModal={props.displayRedirectModal} />
     </div>
   )
 }

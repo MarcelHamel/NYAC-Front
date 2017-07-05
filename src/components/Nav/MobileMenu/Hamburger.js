@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MenuToggle = (e) => {
+const MenuToggle = () => {
   const hamburgerContainer = document.querySelector('#hamburger-container');
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('#nav-links');

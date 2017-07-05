@@ -3,18 +3,18 @@ import Nav from '../Nav/Nav';
 
 import SearchBarContainer from '../SearchBar/SearchBarContainer';
 
-export default class LandingHeader extends Component {
+export default class SearchHeader extends Component {
   constructor(props) {
     super(props)
   }
 
   render() {
     return(
-      <header className="content-header landing-header">
+      <header id="universal-header" style={{backgroundImage: `url(${this.props.image})`}}>
         <div className="header-overlay">
-          <Nav landing={true} />
-          <div className="header-content">
-            <h1>Unlock Your City</h1>
+          <Nav />
+          <div className="search-header-content">
+            <h1>Search for Events</h1>
             <SearchBarContainer />
           </div>
         </div>

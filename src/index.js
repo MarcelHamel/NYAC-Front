@@ -13,13 +13,15 @@ import PressKit from './components/PressKit/PressKit';
 import PhotoGallery from './components/PhotoGallery/PhotoGallery';
 import PhotoAlbum from './components/PhotoGallery/PhotoAlbum';
 import ShowPhoto from './components/PhotoGallery/ShowPhoto';
-import CategorySort from './components/CategorySort/CategorySort';
+import CategorySort from './components/EventSort/CategorySort';
+import SearchEvents from './components/EventSort/SearchEvents';
 
 ReactDom.render(
   <Router history={browserHistory}>
     <Route path="/" component={Main} />
     <Route path="/about" component={About} />
-    <Route path="/category" component={CategorySort} />
+    <Route path="/categories/:name" component={CategorySort} />
+    <Route path="/search/:keyword" component={SearchEvents} />
     <Route path="/private-events" component={PrivateEvents} />
     <Route path="/presskit" component={PressKit} />
     <Route path="/gallery" component={PhotoGallery} />

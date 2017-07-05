@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import CategoryPreviewPanel from './CategoryPreviewPanel';
 import CategoryPreviewMenu from './CategoryPreviewMenu';
 
+import tours from '../../../images/scroll_banner_images/tours.jpeg'
+import active from '../../../images/scroll_banner_images/active.jpeg'
+import hiddenspots from '../../../images/scroll_banner_images/hiddenspots.jpeg'
+import food from '../../../images/scroll_banner_images/food.jpeg'
+import arts from '../../../images/scroll_banner_images/arts.jpeg'
+import historicsites from '../../../images/scroll_banner_images/historicsites.jpeg'
+import social from '../../../images/scroll_banner_images/social.jpeg'
+
+
 export default class CategoryPreview extends Component {
   constructor(props) {
     super(props)
@@ -11,60 +20,60 @@ export default class CategoryPreview extends Component {
         {
           title: 'TOURS',
           text: 'Our knowledgeable guides will provide you with all the information you need to know about NYC\'s hidden.',
-          image: '../../../images/scroll_banner_images/tours.jpeg',
-          linkTarget: '#',
-          linkTitle: 'Tour Events'
+          image: tours,
+          linkTarget: '/categories/Tours',
+          linkTitle: 'Tour Experiences'
         },
         {
-          title: 'ACTIVITIES',
+          title: 'ACTIVE',
           text: 'Join the hike through abandoned grounds.',
-          image: '../../../images/scroll_banner_images/activities.jpeg',
-          linkTarget: '#',
-          linkTitle: 'Activities'
+          image: active,
+          linkTarget: '/categories/Active',
+          linkTitle: 'Active'
         },
         {
           title: 'HIDDEN SPOTS',
           text: 'Explore the abandoned areas of NYC',
-          image: '../../../images/scroll_banner_images/hidden-spots.jpeg',
-          linkTarget: '#',
+          image: hiddenspots,
+          linkTarget: '/catgories/Hidden Spots',
           linkTitle: 'Hidden Spots'
         },
         {
           title: 'FOOD',
           text: 'Let your taste buds do the walking in our Lower East Side food tour.',
-          image: '../../../images/scroll_banner_images/food.jpeg',
-          linkTarget: '#',
-          linkTitle: 'Food Events'
+          image: food,
+          linkTarget: '/categories/Food',
+          linkTitle: 'Food Experiences'
         },
         {
           title: 'ARTS',
           text: 'Take a closer look at the city\'s greatest art influences and layered history.',
-          image: '../../../images/scroll_banner_images/arts.jpeg',
-          linkTarget: '#',
-          linkTitle: 'Arts Events'
+          image: arts,
+          linkTarget: '/categories/Arts',
+          linkTitle: 'Arts Experiences'
         },
         {
           title: 'HISTORIC SITES',
           text: 'Explore New York City\'s intricate and sometimes forgotten past.',
-          image: '../../../images/scroll_banner_images/historic-sites.jpeg',
-          linkTarget: '#',
+          image: historicsites,
+          linkTarget: '/categories/Historic Sites',
           linkTitle: 'Historic Sites'
         },
         {
           title: 'SOCIAL',
           text: 'Get social with people from all walks of life in our variety of speakeasy\'s.',
-          image: '../../../images/scroll_banner_images/social.jpeg',
-          linkTarget: '#',
-          linkTitle: 'Social Events'
+          image: social,
+          linkTarget: '/categories/Social',
+          linkTitle: 'Social Experiences'
         }
       ],
       currentSlideIndex: 0,
       currentSlide: {
         title: 'TOURS',
         text: 'Our knowledgeable guides will provide you with all the information you need to know about NYC\'s hidden.',
-        image: '../../../images/scroll_banner_images/tours.jpeg',
-        linkTarget: '#',
-        linkTitle: 'Tour Events'
+        image: tours,
+        linkTarget: '/categories/Tours',
+        linkTitle: 'Tour Experiences'
       }
     }
   }

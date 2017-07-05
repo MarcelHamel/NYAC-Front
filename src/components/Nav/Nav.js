@@ -15,9 +15,9 @@ export default class Nav extends Component {
     return (
       <nav>
         <Link to="/">
-          <Logo />
+          <Logo landing={this.props.landing} />
         </Link>
-        <NavLinks />
+        <NavLinks name={this.props.name} />
         <SubscriptionButton buttonType="nav-subscribe-button" />
         <Hamburger />
       </nav>

@@ -16,7 +16,7 @@ const TicketDetails = (props) => {
 
   return (
     <div className="ticket-details">
-      <EventRegistrationButton />
+      <EventRegistrationButton event_id={props.event_id} displayRedirectModal={props.displayRedirectModal} />
       <EventTicketAvailability availability={availability} />
       <EventTicketPriceRange tickets={props.tickets} />
       <EventStartDatetime start={props.start} end={props.end}/>

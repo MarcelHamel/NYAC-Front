@@ -1,16 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router';
 
-const NavLinks = () => {
+import SingleNavLink from './SingleNavLink';
+
+const NavLinks = (props) => {
+  const categories = ['Tours', 'Active', 'Hidden Spots', 'Food', 'Arts', 'Historic Sites', 'Social'];
+  const allNavLinks = categories.map((category) => {
+    return (
+      <SingleNavLink name={props.name} category={category} />
+    )
+  })
+
   return (
     <div id="nav-links" className="text-shadow">
-      <Link to="#">TOURS</Link>
-      <Link to="#">ACTIVITES</Link>
-      <Link to="#">HIDDEN SPOTS</Link>
-      <Link to="#">FOOD</Link>
-      <Link to="#">ARTS</Link>
-      <Link to="#">HISTORIC SITES</Link>
-      <Link to="#">SOCIAL</Link>
+    {allNavLinks}
     </div>
   )
 }

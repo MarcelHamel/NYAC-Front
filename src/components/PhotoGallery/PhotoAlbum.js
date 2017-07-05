@@ -22,20 +22,22 @@ export default class PhotoAlbum extends Component {
             }
           }
         }
-      ]
+      ],
+      loading: false
     }
+  }
+
+  componentWillMount() {
+    this.setState({ loading: true })
   }
 
   componentDidMount() {
     axios.get(`http://localhost:8000/photos/albums/${this.props.params.id}`)
     .then(response => {
-      this.setState({ photos: response.data })
-      console.log("data:", response.data);
-    })
-    .then(() => {
-      document
-      .querySelector('.loading-screen-container')
-      .setAttribute('style', 'display: none');
+      this.setState({
+        photos: response.data,
+        loading: false
+      })
     })
     .catch(err => console.log('ERROR:', err));
   }
@@ -48,7 +50,7 @@ export default class PhotoAlbum extends Component {
           <h1>{this.state.photos[0].photo_album.title}</h1>
           <BackButton />
           <PhotoPreviewContainer photos={this.state.photos} />
-          <LoadingScreen />
+          <LoadingScreen loading={this.state.loading} />
         </div>
         <NYACFooter />
       </div>

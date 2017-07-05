@@ -5,7 +5,7 @@ const PhotoPreview = (props) => {
   console.log(props);
 
   return(
-    <div>
+    <div className="photo-preview-card">
       <Link to={`/gallery/photo/${props.event_id}/${props.photo_id}`}>
         <div className="photo-preview" style={{backgroundImage: `url(${props.image})`}} key={props.unique_key}>
         </div>

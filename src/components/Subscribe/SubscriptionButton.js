@@ -15,13 +15,17 @@ export default class SubscriptionButton extends Component {
      if (this.props.buttonType === 'newsletter-landing-button') {
       return (
         <div>
-          <button id="newsletter-landing-button">SUBSCRIBE TO THE NEWSLETTER</button>
+          <a href="http://about.nyadventureclub.com/nyadventureclub/" target="_blank">
+            <button id="newsletter-landing-button">SUBSCRIBE TO THE NEWSLETTER</button>
+          </a>
         </div>
       )
     } else {
       return (
         <div>
-          <button id="nav-subscribe-button">SUBSCRIBE</button>
+          <a href="http://about.nyadventureclub.com/nyadventureclub/" target="_blank">
+            <button id="nav-subscribe-button">SUBSCRIBE</button>
+          </a>
         </div>
       )
     }

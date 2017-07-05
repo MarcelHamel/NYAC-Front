@@ -14,7 +14,9 @@ export default class PrivateEventsHeader extends Component {
           <div className="header-content private-header-content">
             <h1>Private Events</h1>
             <p>We'll make sure your next outing is anything but ordinary</p>
-            <div id="private-events-header-contact">CONTACT US TODAY!</div>
+            <a href="http://about.nyadventureclub.com/nyadventureclub/">
+              <div id="private-events-header-contact">CONTACT US TODAY!</div>
+            </a>
           </div>
         </div>
       </header>

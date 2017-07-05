@@ -6,17 +6,19 @@ const FooterLinks = () => {
     <div className="footer-links">
       <Link to="/">Home</Link>
       <div className="menu-spacer"> </div>
-      <Link to="/about">About</Link>
+      <a href="http://about.nyadventureclub.com/nyadventureclub/" target="_blank">About</a>
       <div className="menu-spacer"> </div>
-      <Link to="/presskit">Presskit</Link>
+      <a href="http://about.nyadventureclub.com/press/">Press</a>
+      <div className="menu-spacer"> </div>
+      <a href="http://about.nyadventureclub.com/press-kit/">Presskit</a>
       <div className="menu-spacer"> </div>
       <Link to="/gallery">Gallery</Link>
       <div className="menu-spacer"> </div>
-      <Link to="/private-events">Private Events</Link>
+      <a href="http://about.nyadventureclub.com/private-events/" target="_blank">Private Events</a>
       <div className="menu-spacer"> </div>
-      <a href="https://squareup.com/gift/2DEXAVS7PJ5YE/order">Gift Card</a>
+      <a href="https://squareup.com/gift/2DEXAVS7PJ5YE/order" target="_blank">Gift Card</a>
       <div className="menu-spacer"> </div>
-      <Link to="#">Contact</Link>
+      <a href="http://about.nyadventureclub.com/nyadventureclub/" target="_blank">Contact</a>
     </div>
   )
 }

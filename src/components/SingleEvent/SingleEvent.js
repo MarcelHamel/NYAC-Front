@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import axios from 'axios';
 
 import UniversalHeader from '../Headers/UniversalHeader';
@@ -56,7 +55,7 @@ export default class SingleEvent extends Component {
     return(
       <div>
         <UniversalHeader image={this.state.event.logo.original.url}/>
-        <SingleEventContainer event={this.state.event} />
+        <SingleEventContainer event={this.state.event} displayRedirectModal={this.displayRedirectModal} />
         <NYACFooter />
       </div>
     )

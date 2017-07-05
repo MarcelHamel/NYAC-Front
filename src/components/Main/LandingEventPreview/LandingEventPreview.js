@@ -9,27 +9,31 @@ export default class LandingEventPreview extends Component {
     super(props)
 
     this.state = {
-      events : []
+      events : [],
+      loading: false
     }
+  }
+
+  componentWillMount() {
+    this.setState({ loading: true })
   }
 
   componentDidMount() {
     axios.get('http://localhost:8000/events')
-    .then(response => this.setState({ events: response.data }))
-    .then(() => {
-      document
-      .querySelector('.loading-screen-container')
-      .setAttribute('style', 'display: none');
-    })
+    .then(response => this.setState({
+      events: response.data,
+      loading: false
+    }))
+
     .catch(err => console.log('ERROR:', err));
   }
 
   render() {
     return(
       <section id="event-preview-container">
-        <h1>Find Your Adventure</h1>
+        <h1>Upcoming Experiences</h1>
         <EventPreviewCardContainer events={this.state.events}/>
-        <LoadingScreen />
+        <LoadingScreen loading={this.state.loading} />
       </section>
     )
   }

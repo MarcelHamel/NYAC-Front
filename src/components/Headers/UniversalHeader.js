@@ -10,7 +10,7 @@ export default class UniversalHeader extends Component {
     return(
       <header id="universal-header" style={{backgroundImage: `url(${this.props.image})`}}>
         <div className="header-overlay">
-          <Nav />
+          <Nav name={this.props.name} />
         </div>
       </header>
     )
