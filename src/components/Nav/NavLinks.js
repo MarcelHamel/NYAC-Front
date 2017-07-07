@@ -6,7 +6,7 @@ const NavLinks = (props) => {
   const categories = ['Tours', 'Active', 'Hidden Spots', 'Food', 'Arts', 'Historic Sites', 'Social'];
   const allNavLinks = categories.map((category) => {
     return (
-      <SingleNavLink name={props.name} category={category} />
+      <SingleNavLink name={props.name} category={category} key={`nav-link-${category}`} />
     )
   })
 

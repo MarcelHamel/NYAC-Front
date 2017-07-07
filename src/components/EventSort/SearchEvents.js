@@ -8,6 +8,8 @@ import EventPreviewCardContainer from '../Main/LandingEventPreview/EventPreviewC
 import SearchTitle from './SearchTitle';
 import FilterContainer from './FilterContainer';
 
+import '../../images/about_page_hero.jpg';
+
 export default class SearchEvents extends Component {
   constructor(props) {
     super(props);
@@ -102,9 +104,11 @@ export default class SearchEvents extends Component {
 
 
   render() {
+    const image = require(`../../images/about_page_hero.jpg`);
+
     return(
       <div>
-        <SearchHeader image='../../images/about-page-hero.jpg' />
+        <SearchHeader image={image} />
         <div id="event-preview-container">
           <SearchTitle keyword={this.props.params.keyword} />
           <FilterContainer location={this.state.location} handleLocationChange={this.handleLocationChange.bind(this)} time={this.state.timeOfDay} handleTimeChange={this.handleTimeChange.bind(this)} day={this.state.timeOfWeek} handleDayChange={this.handleDayChange.bind(this)} />

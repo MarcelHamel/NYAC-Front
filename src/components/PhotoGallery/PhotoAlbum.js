@@ -43,9 +43,12 @@ export default class PhotoAlbum extends Component {
   }
 
   render() {
+    let backgroundImage;
+    backgroundImage = this.state.photos ? this.state.photos[0].highres_link : '';
+
     return(
       <div>
-        <UniversalHeader image='../../images/about-page-hero.jpg' />
+        <UniversalHeader image={backgroundImage} />
         <div className="container flex-column">
           <h1>{this.state.photos[0].photo_album.title}</h1>
           <BackButton />
