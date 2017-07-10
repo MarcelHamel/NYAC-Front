@@ -243,7 +243,7 @@ nav a:hover {
 }
 
 #landing-logo {
-  background-image: url('../images/logos/logotransparent1.png');
+  background-image: url('../images/logos/logotranswhite.png');
 }
 
 #logo {
@@ -713,6 +713,7 @@ nav a:hover {
 footer {
   text-align: center;
   margin-top: 4em;
+  padding-bottom: 0.5em;
   width: 100%;
   min-height: 4em;
   background: #000;
@@ -935,7 +936,7 @@ footer {
   margin-top: 1em;
   max-width: 550px;
   color: #000000;
-  font-family: Merriweather;
+  font-family: 'Merriweather';
   font-size: 1.125em;
   font-weight: bold;
   line-height: 1.875em;
@@ -1439,6 +1440,24 @@ footer {
  }
 }
 
+@media (max-width: 907px) {
+  .event-preview-card {
+    width: 75vw;
+    /*margin-bottom: 1em;*/
+  }
+
+  .event-preview-card-banner {
+    height: calc(75vw / 2);
+    min-height: 200px;
+    max-height: 260px;
+  }
+
+  .event-preview-title {
+    width: 80%;
+    min-width: 350px;
+  }
+}
+
 @media (max-width: 833px) {
   #hamburger-container {
     display: flex;
@@ -1488,7 +1507,7 @@ footer {
  .social-media-icons {
   width: 100%;
   max-width: 320px;
-  margin-bottom: 1em;
+  margin: 1em auto;
  }
 
 }
@@ -1651,7 +1670,11 @@ footer {
   .footer-links {
     flex-direction: column;
     font-size: 1.25em;
-    margin: .5em auto;
+    margin: 1em auto;
+  }
+
+  .social-media-icons {
+    padding-bottom: 0.5em;
   }
 
   .footer-links a {
@@ -1721,7 +1744,13 @@ footer {
   }
 
   .event-preview-title {
-    width: 100%;
+    width: 90%;
+    min-width: 250px;
+    margin-left: 5%;
+  }
+
+  .event-preview-date {
+    margin-left: 5%;
   }
 
   .filter-menu {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router'
 import update from 'react-addons-update';
 
 import SearchBar from './SearchBar';
@@ -26,7 +25,7 @@ export default class SearchBarContainer extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    browserHistory.push(`/search/${this.state.searchField}`);
+    window.location.assign(`/search/${this.state.searchField}`);
   }
 
   render() {

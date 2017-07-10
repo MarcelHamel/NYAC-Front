@@ -27,6 +27,6 @@ ReactDom.render(
     <Route path="/gallery" component={PhotoGallery} />
     <Route path="/gallery/:id" component={PhotoAlbum} />
     <Route path="/gallery/photo/:event_id/:id" component={ShowPhoto} />
-    <Route path="/:id" component={SingleEvent} />
+    <Route path="/event/:id" component={SingleEvent} />
   </Router>,
   document.getElementById('app'));

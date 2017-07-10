@@ -8,9 +8,9 @@ const FooterLinks = () => {
       <div className="menu-spacer"> </div>
       <a href="http://about.nyadventureclub.com/nyadventureclub/" target="_blank">About</a>
       <div className="menu-spacer"> </div>
-      <a href="http://about.nyadventureclub.com/press/">Press</a>
+      <a href="http://about.nyadventureclub.com/press/" target="_blank">Press</a>
       <div className="menu-spacer"> </div>
-      <a href="http://about.nyadventureclub.com/press-kit/">Presskit</a>
+      <a href="http://about.nyadventureclub.com/press-kit/" target="_blank">Presskit</a>
       <div className="menu-spacer"> </div>
       <Link to="/gallery">Gallery</Link>
       <div className="menu-spacer"> </div>

@@ -26,12 +26,33 @@ export default class CategorySort extends Component {
   }
 
   componentWillMount() {
-    this.setState({ loading: true })
+    this.setState({
+      loading: true,
+      title: this.props.params.name
+    })
   }
 
   componentDidMount() {
     const title = this.props.params.name;
-    axios.get(`/category/${this.props.params.name}`)
+    axios.get(`/events/category/${this.props.params.name}`)
+    .then(response => {
+      this.setState({
+        events: response.data,
+        displayEvents: response.data,
+        category: title,
+        loading: false
+      });
+    })
+    .catch(err => console.log('ERROR:', err));
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.params.name === this.props.params.name;
+  }
+
+  componentDidUpdate() {
+    const title = this.props.params.name;
+    axios.get(`/events/category/${this.props.params.name}`)
     .then(response => {
       this.setState({
         events: response.data,

@@ -22,6 +22,7 @@ export default class SearchEvents extends Component {
       timeOfWeek: '',
       timeOfDay: '',
       loading: false,
+      title: ''
     }
   }
 

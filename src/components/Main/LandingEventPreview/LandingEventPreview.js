@@ -19,13 +19,38 @@ export default class LandingEventPreview extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://newyorkadventureclub-dev.us-east-1.elasticbeanstalk.com/events')
-    .then(response => this.setState({
-      events: response.data,
-      loading: false
-    }))
-
-    .catch(err => console.log('ERROR:', err));
+    const currentTime = new Date().getTime();
+    if (localStorage.getItem('lastUpdateTime') && localStorage.getItem('events')) {
+      const lastUpdate = localStorage.getItem('lastUpdateTime');
+      if (currentTime - lastUpdate < 300000) {
+        this.setState({
+          events: JSON.parse(localStorage.getItem('events')),
+          loading: false
+        })
+      } else {
+        axios.get('http://www.localhost:8000/events')
+        .then(response => {
+        this.setState({
+          events: response.data,
+          loading: false
+        })
+        window.localStorage.setItem('events', JSON.stringify(response.data));
+        window.localStorage.setItem('lastUpdateTime', new Date().getTime());
+      })
+      .catch(err => console.log('ERROR:', err));
+      }
+    } else {
+      axios.get('http://www.localhost:8000/events')
+      .then(response => {
+        this.setState({
+          events: response.data,
+          loading: false
+        })
+        window.localStorage.setItem('events', response.data);
+        window.localStorage.setItem('lastUpdateTime', new Date().getTime());
+      })
+      .catch(err => console.log('ERROR:', err));
+    }
   }
 
   render() {
