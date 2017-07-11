@@ -22,28 +22,31 @@ export default class LandingEventPreview extends Component {
     const currentTime = new Date().getTime();
     if (localStorage.getItem('lastUpdateTime') && localStorage.getItem('events')) {
       const lastUpdate = localStorage.getItem('lastUpdateTime');
-      if (currentTime - lastUpdate < 300000) {
+      if (currentTime - lastUpdate < 900000) {
+        let displayEvents = JSON.parse(localStorage.getItem('events')).slice(0,6);
         this.setState({
-          events: JSON.parse(localStorage.getItem('events')),
+          events: displayEvents,
           loading: false
         })
       } else {
-        axios.get('http://www.localhost:8000/events')
+        axios.get('/events')
         .then(response => {
-        this.setState({
-          events: response.data,
-          loading: false
-        })
+          let displayEvents = response.data.slice(0,6);
+          this.setState({
+            events: displayEvents,
+            loading: false
+          })
         window.localStorage.setItem('events', JSON.stringify(response.data));
         window.localStorage.setItem('lastUpdateTime', new Date().getTime());
       })
       .catch(err => console.log('ERROR:', err));
       }
     } else {
-      axios.get('http://www.localhost:8000/events')
+      axios.get('/events')
       .then(response => {
+        let displayEvents = response.data.slice(0,6);
         this.setState({
-          events: response.data,
+          events: displayEvents,
           loading: false
         })
         window.localStorage.setItem('events', response.data);

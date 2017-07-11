@@ -33,36 +33,91 @@ export default class CategorySort extends Component {
   }
 
   componentDidMount() {
-    const title = this.props.params.name;
-    axios.get(`/events/category/${this.props.params.name}`)
-    .then(response => {
-      this.setState({
-        events: response.data,
-        displayEvents: response.data,
-        category: title,
-        loading: false
-      });
-    })
-    .catch(err => console.log('ERROR:', err));
+    const currentTime = new Date().getTime();
+    if (localStorage.getItem('lastUpdateTime') && localStorage.getItem('events')) {
+      const lastUpdate = localStorage.getItem('lastUpdateTime');
+      if (currentTime - lastUpdate < 900000) {
+        let filteredEvents = JSON.parse(localStorage.getItem('events')).filter((event) => {
+          if (event) {
+            let categoryTagStart = event.description.html.indexOf('>Categories: ');
+            let categoryTagEnd = event.description.html.indexOf('<', categoryTagStart);
+            let categoryTagsRaw = event.description.html.slice(categoryTagStart, categoryTagEnd);
+            let categoryTags = categoryTagsRaw.slice(13);
+            let categories = categoryTags.split(', ');
+            return categories.includes(this.props.params.name);
+          }
+        })
+        this.setState({
+          events: filteredEvents,
+          displayEvents: filteredEvents,
+          loading: false
+        })
+      } else {
+        axios.get('/events')
+        .then(response => {
+          let filteredEvents = response.data.filter((event) => {
+            if (event) {
+              let categoryTagStart = event.description.html.indexOf('>Categories: ');
+              let categoryTagEnd = event.description.html.indexOf('<', categoryTagStart);
+              let categoryTagsRaw = event.description.html.slice(categoryTagStart, categoryTagEnd);
+              let categoryTags = categoryTagsRaw.slice(13);
+              let categories = categoryTags.split(', ');
+              return categories.includes(this.props.params.name);
+            }
+          })
+          this.setState({
+            events: filteredEvents,
+            displayEvents: filteredEvents,
+            loading: false
+          })
+        window.localStorage.setItem('events', JSON.stringify(response.data));
+        window.localStorage.setItem('lastUpdateTime', new Date().getTime());
+      })
+      .catch(err => console.log('ERROR:', err));
+      }
+    } else {
+      console.log('local storage not found');
+      axios.get('/events')
+      .then(response => {
+        let filteredEvents = response.data.filter((event) => {
+          if (event) {
+            let categoryTagStart = event.description.html.indexOf('>Categories: ');
+            let categoryTagEnd = event.description.html.indexOf('<', categoryTagStart);
+            let categoryTagsRaw = event.description.html.slice(categoryTagStart, categoryTagEnd);
+            let categoryTags = categoryTagsRaw.slice(13);
+            let categories = categoryTags.split(', ');
+            return categories.includes(this.props.params.name);
+          }
+        })
+        this.setState({
+          events: filteredEvents,
+          displayEvents: filteredEvents,
+          loading: false
+        })
+        window.localStorage.setItem('events', response.data);
+        window.localStorage.setItem('lastUpdateTime', new Date().getTime());
+      })
+      .catch(err => console.log('ERROR:', err));
+    }
   }
 
-  shouldComponentUpdate(nextProps) {
-    return nextProps.params.name === this.props.params.name;
-  }
+  // shouldComponentUpdate(nextProps) {
+  //   return nextProps.params.name === this.props.params.name;
+  // }
 
-  componentDidUpdate() {
-    const title = this.props.params.name;
-    axios.get(`/events/category/${this.props.params.name}`)
-    .then(response => {
-      this.setState({
-        events: response.data,
-        displayEvents: response.data,
-        category: title,
-        loading: false
-      });
-    })
-    .catch(err => console.log('ERROR:', err));
-  }
+  // componentDidUpdate() {
+  //   const title = this.props.params.name;
+  //   axios.get(`/events/category/${this.props.params.name}`)
+  //   .then(response => {
+  //     this.setState({
+  //       events: response.data,
+  //       displayEvents: response.data,
+  //       category: title,
+  //       loading: false
+  //     });
+  //   })
+  //   .catch(err => console.log('ERROR:', err));
+  // }
 
   handleLocationChange(e) {
     this.setState({ location: e.target.value });
