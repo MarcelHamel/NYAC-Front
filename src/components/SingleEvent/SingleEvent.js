@@ -43,12 +43,11 @@ export default class SingleEvent extends Component {
   }
 
   componentWillMount() {
-    const currentTime = new Date().getTime();
     if (localStorage.getItem('lastUpdateTime') && localStorage.getItem('events')) {
       let localStorageEvents = JSON.parse(localStorage.getItem('events'));
       let currentEvent = {};
       localStorageEvents.forEach((event) => {
-        if (event.id == this.props.params.id) { currentEvent = event };
+        if (event.id == this.props.params.id) { currentEvent = event }
       })
       if ( currentEvent ) {
         this.setState({ event: currentEvent })

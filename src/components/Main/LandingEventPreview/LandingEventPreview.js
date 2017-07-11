@@ -49,7 +49,7 @@ export default class LandingEventPreview extends Component {
           events: displayEvents,
           loading: false
         })
-        window.localStorage.setItem('events', response.data);
+        window.localStorage.setItem('events', JSON.stringify(response.data));
         window.localStorage.setItem('lastUpdateTime', new Date().getTime());
       })
       .catch(err => console.log('ERROR:', err));
