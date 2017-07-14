@@ -40,6 +40,8 @@ export default class PhotoAlbum extends Component {
       })
     })
     .catch(err => console.log('ERROR:', err));
+
+    document.querySelector('body').scrollTop = 0;
   }
 
   render() {

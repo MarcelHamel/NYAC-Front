@@ -86,6 +86,7 @@ button:focus {
 header {
   width: 100%;
   background-size: cover;
+  background-position: center;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   color: #FFF;
@@ -97,7 +98,7 @@ header {
 }
 
 .landing-header {
-  background-image: url('../images/unnamed.jpg');
+  background-image: url('../images/javits_center_green_roof.jpeg');
 }
 
 .private-events-header {
@@ -118,6 +119,7 @@ header {
 #universal-header {
   height: calc(100vw / 2);
   max-height: 460px;
+  min-height: 360px;
   background-position: center;
 }
 
@@ -739,6 +741,7 @@ footer {
   color: #EFEFEF;
   text-decoration: none;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .footer-links a:hover {
@@ -759,6 +762,14 @@ footer {
   width: 45px;
 }
 
+.back-to-top-link {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 /**************************/
 /*   CONTACT MODAL        */
@@ -925,6 +936,10 @@ footer {
 /*   SINGLE EVENT              */
 /*******************************/
 
+.mobile-venue-details {
+  display: none;
+ }
+
 #single-event-container {
   max-width: 980px;
   margin: 0 auto;
@@ -938,9 +953,13 @@ footer {
   color: #000000;
   font-family: 'Merriweather';
   font-size: 1.125em;
-  font-weight: bold;
+  font-weight: 300;
   line-height: 1.875em;
   margin-bottom: 2em;
+}
+
+#single-event-content h1 {
+  line-height: 1.5em;
 }
 
 #single-event-ticket-info {
@@ -1258,7 +1277,6 @@ footer {
 
 .filter-menu select {
   background: #FFF;
-  /*border: none;*/
   width: 268px;
   font-family: Raleway;
 }
@@ -1267,12 +1285,7 @@ footer {
   outline: none;
 }
 
-.filter-menu option {
-  background: blue;
-}
-
 .filter-select {
-  /*border: 1px solid black;*/
   padding: 5px;
 }
 
@@ -1513,6 +1526,14 @@ footer {
 }
 
 @media (max-width: 777px) {
+  .search-header-content h1 {
+    font-size: 1.5em;
+  }
+
+  .search-header-content {
+    height: 200px;
+  }
+
  #category-preview-content-container {
     display: flex;
     flex-direction: column;
@@ -1524,10 +1545,19 @@ footer {
  }
 
  #single-event-container {
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin-left: 2em;
   margin-right: 2em;
   width: calc(100% - 4em);
+ }
+
+ .desktop-venue-details {
+  display: none;
+ }
+
+ .mobile-venue-details {
+  display: block;
+  position: relative;
  }
 
  #single-event-ticket-info {
@@ -1535,8 +1565,9 @@ footer {
   box-shadow: none;
   position: initial;
   width: 100%;
-  margin: 0 auto;
-  height: 800px;
+  margin: 2em auto 0 auto;
+  padding: 0;
+  height: auto;
  }
 
  #venue-map-container iframe {
@@ -1545,10 +1576,6 @@ footer {
 
  .ticket-details {
   border-bottom: none;
- }
-
- #event-venue-details {
-  height: 40px;
  }
 
 }
@@ -1627,15 +1654,16 @@ footer {
 
 @media (max-width: 555px) {
   #logo, #landing-logo {
-    min-width: 140px;
+    height: 112px;
+    min-width: 150px;
   }
 
   #landing-logo {
-    background-image: url('../images/logos/logotranswhitetext.png');
+  background-image: url('../images/logos/logotranswhite.png');
   }
 
   #logo {
-    background-image: url('../images/logos/logotransgoldtext.png');
+    background-image: url('../images/logos/logotransgold.png');
   }
 
   .category-scroll-arrow-box,
@@ -1704,6 +1732,44 @@ footer {
 }
 
 @media (max-width: 460px) {
+
+  #contact-modal-content {
+    height: 75vh;
+    overflow-y: scroll;
+    justify-content: space-around;
+  }
+
+  #contact-modal-content input,
+  #contact-modal-content textarea {
+    width: 280px;
+  }
+
+  #contact-modal-content textarea {
+    height: 100px;
+  }
+
+  .back-to-top-link {
+    margin-top: 2em;
+    margin-bottom: -2em;
+  }
+
+  .adventure-item img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .adventure-item p {
+    font-size: 1em;
+    letter-spacing: 1px;
+    line-height: 1.25em;
+    margin: 0.75em auto;
+  }
+
+  .adventure-title {
+    color: #DBA510;
+    height: 1em;
+  }
+
   #testimonial-content {
     display: flex;
     flex-direction: column;
@@ -1723,14 +1789,6 @@ footer {
 
   #single-event-content {
     font-size: 1em;
-  }
-
-  #venue-map-container {
-    display: none;
-  }
-
-  #single-event-ticket-info {
-    height: 400px;
   }
 
   .about-img {
@@ -1795,6 +1853,10 @@ footer {
   .landing-header .header-content h1 {
     font-size: 2.25em;
   }
+
+  #single-event-content h1 {
+  font-size: 1.5em;
+}
 
 }
 

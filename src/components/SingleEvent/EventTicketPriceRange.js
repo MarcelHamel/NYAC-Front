@@ -4,7 +4,11 @@ const EventTicketPriceRange = (props) => {
 
   // Computes display price range
   let ticketPrices = props.tickets.map((ticket) => {
-    return ticket.cost.value / 100;
+    return ticket.cost ? ticket.cost.value / 100 : 0;
+  })
+
+  ticketPrices = ticketPrices.filter((price) => {
+    return price !== 0;
   })
 
   let minPrice = Math.min.apply(null, ticketPrices);

@@ -7,8 +7,8 @@ import active from '../../../images/scroll_banner_images/active.jpeg'
 import hiddenspots from '../../../images/scroll_banner_images/hiddenspots.jpeg'
 import food from '../../../images/scroll_banner_images/food.jpeg'
 import arts from '../../../images/scroll_banner_images/arts.jpeg'
-import historicsites from '../../../images/scroll_banner_images/historicsites.jpeg'
 import social from '../../../images/scroll_banner_images/social.jpeg'
+import historicsites from '../../../images/scroll_banner_images/historicsites.jpeg'
 
 
 export default class CategoryPreview extends Component {
@@ -19,61 +19,61 @@ export default class CategoryPreview extends Component {
       slides: [
         {
           title: 'TOURS',
-          text: 'Our knowledgeable guides will provide you with all the information you need to know about NYC\'s hidden.',
+          text: 'Get insider access to the best-kept local secrets.',
           image: tours,
           linkTarget: '/categories/Tours',
-          linkTitle: 'Tour Experiences'
+          linkTitle: 'Tours'
         },
         {
           title: 'ACTIVE',
-          text: 'Join the hike through abandoned grounds.',
+          text: 'Discover hidden gems through physical exploration.',
           image: active,
           linkTarget: '/categories/Active',
           linkTitle: 'Active'
         },
         {
           title: 'HIDDEN SPOTS',
-          text: 'Explore the abandoned areas of NYC',
+          text: 'Explore secrets hiding in plain sight.',
           image: hiddenspots,
           linkTarget: '/catgories/Hidden Spots',
           linkTitle: 'Hidden Spots'
         },
         {
           title: 'FOOD',
-          text: 'Let your taste buds do the walking in our Lower East Side food tour.',
+          text: 'Let your taste buds lead the way.',
           image: food,
           linkTarget: '/categories/Food',
-          linkTitle: 'Food Experiences'
+          linkTitle: 'Food'
         },
         {
           title: 'ARTS',
-          text: 'Take a closer look at the city\'s greatest art influences and layered history.',
+          text: 'Take a closer look at the art influences defining our culture.',
           image: arts,
           linkTarget: '/categories/Arts',
-          linkTitle: 'Arts Experiences'
+          linkTitle: 'Arts'
         },
         {
           title: 'HISTORIC SITES',
-          text: 'Explore New York City\'s intricate and sometimes forgotten past.',
+          text: 'Learn about the intricate and sometimes forgotten past of incredible destinations.',
           image: historicsites,
           linkTarget: '/categories/Historic Sites',
           linkTitle: 'Historic Sites'
         },
         {
           title: 'SOCIAL',
-          text: 'Get social with people from all walks of life in our variety of speakeasy\'s.',
+          text: 'Get social with our community, which includes everyone from recent NYC transplants to lifelong residents.',
           image: social,
           linkTarget: '/categories/Social',
-          linkTitle: 'Social Experiences'
+          linkTitle: 'Social'
         }
       ],
       currentSlideIndex: 0,
       currentSlide: {
         title: 'TOURS',
-        text: 'Our knowledgeable guides will provide you with all the information you need to know about NYC\'s hidden.',
+        text: 'Get insider access to the best-kept local secrets.',
         image: tours,
         linkTarget: '/categories/Tours',
-        linkTitle: 'Tour Experiences'
+        linkTitle: 'Tours'
       }
     }
   }

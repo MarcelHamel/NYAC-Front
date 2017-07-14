@@ -7,6 +7,7 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import EventPreviewCardContainer from '../Main/LandingEventPreview/EventPreviewCardContainer';
 import CategoryTitle from './CategoryTitle';
 import FilterContainer from './FilterContainer';
+import BackToTopLink from '../BackToTopLink/BackToTopLink';
 
 
 
@@ -30,6 +31,8 @@ export default class CategorySort extends Component {
       loading: true,
       title: this.props.params.name
     })
+
+    document.querySelector('body').scrollTop = 0;
   }
 
   componentDidMount() {
@@ -101,23 +104,9 @@ export default class CategorySort extends Component {
     }
   }
 
-  // shouldComponentUpdate(nextProps) {
-  //   return nextProps.params.name === this.props.params.name;
-  // }
-
-  // componentDidUpdate() {
-  //   const title = this.props.params.name;
-  //   axios.get(`/events/category/${this.props.params.name}`)
-  //   .then(response => {
-  //     this.setState({
-  //       events: response.data,
-  //       displayEvents: response.data,
-  //       category: title,
-  //       loading: false
-  //     });
-  //   })
-  //   .catch(err => console.log('ERROR:', err));
-  // }
+  componentDidUpdate() {
+    document.querySelector('body').scrollTop = 0;
+  }
 
   handleLocationChange(e) {
     this.setState({ location: e.target.value });
@@ -140,7 +129,11 @@ export default class CategorySort extends Component {
     // Filters first by city, if condition is present.
     if (this.state.location) {
       filteredEvents = filteredEvents.filter((event) => {
-        return event.venue.address.city === this.state.location;
+
+        const citiesInQueens = ['Queens', 'Bayside'];
+        let city = citiesInQueens.includes(event.venue.address.city) ? 'Queens' : event.venue.address.city;
+
+        return city === this.state.location;
       })
     }
 
@@ -192,6 +185,7 @@ export default class CategorySort extends Component {
           <EventPreviewCardContainer events={this.state.displayEvents} />
         </div>
         <LoadingScreen loading={this.state.loading} />
+        <BackToTopLink />
         <NYACFooter />
       </div>
     )

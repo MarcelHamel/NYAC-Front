@@ -62,8 +62,8 @@ export default class NYACFooter extends Component {
   render() {
     return (
       <footer>
-        <FooterLinks />
-        <SocialMediaIcons displayContactModal={this.displayContactModal} />
+        <FooterLinks displayContactModal={this.displayContactModal} />
+        <SocialMediaIcons />
         <ContactModal closeContactModal={this.closeContactModal.bind(this)} handleChange={this.handleChange.bind(this)} handleSubmit={this.handleSubmit.bind(this)} first={this.state.first} last={this.state.last} email={this.state.email} subject={this.state.subject} message={this.state.message} />
       </footer>
     )

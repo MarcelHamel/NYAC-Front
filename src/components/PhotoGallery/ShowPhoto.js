@@ -26,6 +26,8 @@ export default class ShowPhoto extends Component {
       console.log("data:", response.data);
     })
     .catch(err => console.log('ERROR:', err));
+
+    document.querySelector('body').scrollTop = 0;
   }
 
   render() {

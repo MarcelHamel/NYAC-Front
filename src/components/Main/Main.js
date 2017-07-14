@@ -18,6 +18,10 @@ export default class Main extends Component {
     }
   }
 
+  componentDidMount() {
+    document.querySelector('body').scrollTop = 0;
+  }
+
   render () {
     return (
       <div>

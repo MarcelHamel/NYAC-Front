@@ -3,7 +3,9 @@ import axios from 'axios';
 
 import UniversalHeader from '../Headers/UniversalHeader';
 import SingleEventContainer from './SingleEventContainer';
+import VenueDetails from './VenueDetails';
 import NYACFooter from '../NYACFooter/NYACFooter';
+import BackToTopLink from '../BackToTopLink/BackToTopLink';
 
 export default class SingleEvent extends Component {
   constructor(props) {
@@ -65,6 +67,8 @@ export default class SingleEvent extends Component {
       })
       .catch(err => console.log('ERROR:', err));
     }
+
+    document.querySelector('body').scrollTop = 0;
   }
 
   render() {
@@ -73,6 +77,10 @@ export default class SingleEvent extends Component {
       <div>
         <UniversalHeader image={this.state.event.logo.original.url}/>
         <SingleEventContainer event={this.state.event} displayRedirectModal={this.displayRedirectModal} />
+        <div className='mobile-venue-details'>
+          <VenueDetails venue={this.state.event.venue} />
+        </div>
+        <BackToTopLink />
         <NYACFooter />
       </div>
     )
