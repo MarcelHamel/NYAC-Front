@@ -1,3 +1,5 @@
+// This is the big, gray testimonials container from the landing page.
+
 import React, { Component } from 'react';
 
 import TestimonialContent from './TestimonialContent';
@@ -5,7 +7,7 @@ import TestimonialContent from './TestimonialContent';
 import rosie from '../../../images/testimonials/rosie.jpg';
 import grant from '../../../images/testimonials/grant.jpg';
 import amanda from '../../../images/testimonials/amanda.jpg';
-import franklin from '../../../images/testimonials/franklin.jpg';
+import franklin2 from '../../../images/testimonials/franklin2.jpg';
 
 export default class Testimonials extends Component {
   constructor(props) {
@@ -25,7 +27,7 @@ export default class Testimonials extends Component {
          quote: 'Everything is super reasonably priced and very accessible, something for everyone and lots of things that you would never know were out there. Highly recommend.',
          name: 'Amanda B.'
         },
-        {image: franklin,
+        {image: franklin2,
          quote: 'The weekly newsletter is astoundingly comprehensive, offering an immediate panorama of choice sights and sounds of the five boroughs and suburbs.',
          name: 'Franklin H.'
         }

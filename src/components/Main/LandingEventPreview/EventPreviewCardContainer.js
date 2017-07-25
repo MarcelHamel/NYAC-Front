@@ -1,3 +1,5 @@
+// Container for displaying all preview cards within the landing, category and search pages.
+
 import React from 'react';
 
 import EventPreviewCard from './EventPreviewCard';

@@ -1,3 +1,4 @@
+// This component renders the city name above the map.
 import React from 'react';
 
 const VenueDetailCity = (props) => {

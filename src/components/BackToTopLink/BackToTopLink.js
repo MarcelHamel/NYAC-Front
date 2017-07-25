@@ -1,3 +1,5 @@
+// A "Back To Top" text link that appears in category sorts and search results.
+
 import React from 'react';
 
 const BackToTopLink = () => {

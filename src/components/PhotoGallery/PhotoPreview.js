@@ -1,3 +1,7 @@
+// Shown in the Album view, this is a preview of each image in the album.
+// Clicking this leads to the individual photo view, which renders a high-res
+// version of the image.
+
 import React from 'react';
 import { Link } from 'react-router';
 

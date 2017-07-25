@@ -1,3 +1,4 @@
+// Deprecated like rest of modal.
 import React from 'react';
 
 const RedirectModalOKButton = (props) => {

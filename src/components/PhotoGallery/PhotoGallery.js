@@ -1,3 +1,4 @@
+// This is the main gallery page, which lists all Photo Albums connected to NYAC events on Meetup.
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -18,13 +19,16 @@ export default class PhotoGallery extends Component {
     }
   }
 
+  // Turns on loading screen.
   componentWillMount() {
     this.setState({ loading: true })
   }
 
+  // Fetches list of albums from Meetup
   componentDidMount() {
     axios.get('/photos')
     .then(response => {
+      // Commits album list to application state, turns off loading screen.
       this.setState({
         albums: response.data,
         loading: false
@@ -32,6 +36,7 @@ export default class PhotoGallery extends Component {
     })
     .catch(err => console.log('ERROR:', err));
 
+    // Scroll to top of page on component load.
     document.querySelector('body').scrollTop = 0;
   }
 

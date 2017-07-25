@@ -1,3 +1,5 @@
+// Left scroll button in category preview.
+
 import React from 'react';
 
 const CategoryScrollLeft = (props)=> {

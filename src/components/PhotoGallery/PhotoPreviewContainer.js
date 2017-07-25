@@ -1,3 +1,5 @@
+// Similar to Event Preview and Album Previews, this displays image previews in the Album View.
+
 import React from 'react';
 
 import PhotoPreview from './PhotoPreview';

@@ -1,3 +1,5 @@
+// This component renders the category preview text.
+
 import React from 'react';
 
 const CategoryPreviewText = (props) => {

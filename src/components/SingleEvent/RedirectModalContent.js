@@ -1,3 +1,4 @@
+// Deprecated like rest of modal.
 import React from 'react';
 
 import RedirectModalOKButton from './RedirectModalOKButton';

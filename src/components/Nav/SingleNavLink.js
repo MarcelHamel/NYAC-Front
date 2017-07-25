@@ -1,3 +1,5 @@
+// A single navLink. The conditional render turns a link gold if display its category page.
+
 import React from 'react';
 
 const SingleNavLink = (props) => {

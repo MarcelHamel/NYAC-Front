@@ -1,3 +1,7 @@
+// Different headers exist based on varying content within them.
+
+// This is the header for the landing page.
+
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 

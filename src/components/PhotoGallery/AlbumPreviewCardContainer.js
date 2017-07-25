@@ -1,3 +1,4 @@
+// Container for Album Preview Cards.
 import React from 'react';
 
 import AlbumPreviewCard from './AlbumPreviewCard';

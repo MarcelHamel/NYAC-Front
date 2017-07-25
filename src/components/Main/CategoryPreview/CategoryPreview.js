@@ -1,7 +1,9 @@
+// This is the category preview slideshow for the landing page.
 import React, { Component } from 'react';
 import CategoryPreviewPanel from './CategoryPreviewPanel';
 import CategoryPreviewMenu from './CategoryPreviewMenu';
 
+// Import all background images for slides
 import tours from '../../../images/scroll_banner_images/tours.jpeg'
 import active from '../../../images/scroll_banner_images/active.jpeg'
 import hiddenspots from '../../../images/scroll_banner_images/hiddenspots.jpeg'
@@ -15,6 +17,7 @@ export default class CategoryPreview extends Component {
   constructor(props) {
     super(props)
 
+    // Each slide is contained within state.
     this.state = {
       slides: [
         {
@@ -67,6 +70,7 @@ export default class CategoryPreview extends Component {
           linkTitle: 'Social'
         }
       ],
+      // The currentSlideIndex and currentSlide determine what is displayed in the preview window.
       currentSlideIndex: 0,
       currentSlide: {
         title: 'TOURS',
@@ -78,7 +82,10 @@ export default class CategoryPreview extends Component {
     }
   }
 
+  // Sets category slide based on clicked links in top of component.
   selectCategoryPreview(e) {
+    // Each menu item has an id containing its category name and index in the slides array
+    // contained in state. newActiveCateogry parses the index number from that id.
     let newActiveCategory = parseInt(e.target.getAttribute('id').match(/\d/));
     this.setState({
       currentSlideIndex: newActiveCategory,
@@ -86,6 +93,7 @@ export default class CategoryPreview extends Component {
     });
   }
 
+  // Finds previous index in slides array, readjusts state of active slide.
   categoryScrollLeft() {
     let newIndex = this.state.currentSlideIndex === 0 ? this.state.slides.length - 1 : this.state.currentSlideIndex - 1;
     this.setState({
@@ -94,6 +102,7 @@ export default class CategoryPreview extends Component {
     });
   }
 
+  // Finds next index in slides array, readjusts state of active slide.
   categoryScrollRight() {
     let newIndex = this.state.currentSlideIndex === this.state.slides.length - 1 ? 0 : this.state.currentSlideIndex + 1;
     this.setState({

@@ -1,3 +1,5 @@
+// This is the container for the category preview display
+
 import React from 'react';
 
 import CategoryScrollLeft from './CategoryScrollLeft'

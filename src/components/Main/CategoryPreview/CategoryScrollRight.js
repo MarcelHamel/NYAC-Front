@@ -1,3 +1,5 @@
+// Right scroll button in category preview.
+
 import React from 'react';
 
 const CategoryScrollRight = (props)=> {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { GetEvents } from '../GetEventData/GetEvents';
 
 import UniversalHeader from '../Headers/UniversalHeader';
 import NYACFooter from '../NYACFooter/NYACFooter';
@@ -36,73 +36,28 @@ export default class CategorySort extends Component {
   }
 
   componentDidMount() {
-    const currentTime = new Date().getTime();
-    if (localStorage.getItem('lastUpdateTime') && localStorage.getItem('events')) {
-      const lastUpdate = localStorage.getItem('lastUpdateTime');
-      if (currentTime - lastUpdate < 900000) {
-        let filteredEvents = JSON.parse(localStorage.getItem('events')).filter((event) => {
-          if (event) {
-            let categoryTagStart = event.description.html.indexOf('>Categories: ');
-            let categoryTagEnd = event.description.html.indexOf('<', categoryTagStart);
-            let categoryTagsRaw = event.description.html.slice(categoryTagStart, categoryTagEnd);
-            let categoryTags = categoryTagsRaw.slice(13);
-            let categories = categoryTags.split(', ');
-            return categories.includes(this.props.params.name);
-          }
-        })
-        this.setState({
-          events: filteredEvents,
-          displayEvents: filteredEvents,
-          loading: false
-        })
-      } else {
-        axios.get('/events')
-        .then(response => {
-          let filteredEvents = response.data.filter((event) => {
-            if (event) {
-              let categoryTagStart = event.description.html.indexOf('>Categories: ');
-              let categoryTagEnd = event.description.html.indexOf('<', categoryTagStart);
-              let categoryTagsRaw = event.description.html.slice(categoryTagStart, categoryTagEnd);
-              let categoryTags = categoryTagsRaw.slice(13);
-              let categories = categoryTags.split(', ');
-              return categories.includes(this.props.params.name);
-            }
-          })
-          this.setState({
-            events: filteredEvents,
-            displayEvents: filteredEvents,
-            loading: false
-          })
-        window.localStorage.setItem('events', JSON.stringify(response.data));
-        window.localStorage.setItem('lastUpdateTime', new Date().getTime());
+    const filterEvents = (arr) => {
+      window.localStorage.setItem('events', JSON.stringify(arr));
+      const filteredEvents = arr.filter((event) => {
+        if (event) {
+          let categoryTagStart = event.description.html.indexOf('>Categories: ');
+          let categoryTagEnd = event.description.html.indexOf('<', categoryTagStart);
+          let categoryTagsRaw = event.description.html.slice(categoryTagStart, categoryTagEnd);
+          let categoryTags = categoryTagsRaw.slice(13);
+          let categories = categoryTags.split(', ');
+          return categories.includes(this.props.params.name);
+        }
       })
-      .catch(err => console.log('ERROR:', err));
-      }
-    } else {
-      console.log('local storage not found');
-      axios.get('/events')
-      .then(response => {
-        let filteredEvents = response.data.filter((event) => {
-          if (event) {
-            let categoryTagStart = event.description.html.indexOf('>Categories: ');
-            let categoryTagEnd = event.description.html.indexOf('<', categoryTagStart);
-            let categoryTagsRaw = event.description.html.slice(categoryTagStart, categoryTagEnd);
-            let categoryTags = categoryTagsRaw.slice(13);
-            let categories = categoryTags.split(', ');
-            return categories.includes(this.props.params.name);
-          }
-        })
-        this.setState({
-          events: filteredEvents,
-          displayEvents: filteredEvents,
-          loading: false
-        })
-        window.localStorage.setItem('events', response.data);
-        window.localStorage.setItem('lastUpdateTime', new Date().getTime());
+      this.setState({
+        events: filteredEvents,
+        displayEvents: filteredEvents,
+        loading: false
       })
-      .catch(err => console.log('ERROR:', err));
     }
+
+    GetEvents('http://www.localhost:8000/events', filterEvents);
   }
+
 
   componentDidUpdate() {
     document.querySelector('body').scrollTop = 0;

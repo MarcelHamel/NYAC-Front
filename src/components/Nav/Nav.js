@@ -1,3 +1,5 @@
+// Nav bar for entire site. Props are passed from page headers.
+
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 

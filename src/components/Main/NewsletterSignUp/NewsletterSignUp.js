@@ -1,3 +1,5 @@
+// This is a container with our newsletter sign up on the landing page.
+
 import React from 'react';
 
 import SubscriptionButton from '../../Subscribe/SubscriptionButton';

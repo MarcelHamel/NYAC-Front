@@ -1,3 +1,4 @@
+// This is a preview card for photo albums, similar to those found in the Event Preview.
 import React from 'react';
 import { Link } from 'react-router';
 

@@ -1,3 +1,8 @@
+// Contact modal triggered by Contact link in Footer.
+// ContactModalContent component contains actual form.
+// Since this never exists outside of the footer,
+// all functionality is contained within the NYACFooter component.
+
 import React from 'react';
 
 import ContactModalContent from './ContactModalContent';

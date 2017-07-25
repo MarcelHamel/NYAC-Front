@@ -1,5 +1,8 @@
+// This is the "REGISTER" button on the Single Event display.
 import React from 'react';
 
+// Its worth noting that appending "#tickets" to the eventbrite link
+// automatically displays their purchase modal.
 const EventRegistrationButton = (props) => {
   return(
     <div>

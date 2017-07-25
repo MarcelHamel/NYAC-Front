@@ -1,5 +1,8 @@
+// This Event Preview for the landing page.
+// I will eventually want to break out the preview components into their own component folder.
+
 import React, { Component } from 'react';
-import axios from 'axios';
+import { GetEvents } from '../../GetEventData/GetEvents';
 
 import EventPreviewCardContainer from './EventPreviewCardContainer';
 import LoadingScreen from '../../LoadingScreen/LoadingScreen';
@@ -19,41 +22,16 @@ export default class LandingEventPreview extends Component {
   }
 
   componentDidMount() {
-    const currentTime = new Date().getTime();
-    if (localStorage.getItem('lastUpdateTime') && localStorage.getItem('events')) {
-      const lastUpdate = localStorage.getItem('lastUpdateTime');
-      if (currentTime - lastUpdate < 900000) {
-        let displayEvents = JSON.parse(localStorage.getItem('events')).slice(0,6);
-        this.setState({
-          events: displayEvents,
-          loading: false
-        })
-      } else {
-        axios.get('/events')
-        .then(response => {
-          let displayEvents = response.data.slice(0,6);
-          this.setState({
-            events: displayEvents,
-            loading: false
-          })
-        window.localStorage.setItem('events', JSON.stringify(response.data));
-        window.localStorage.setItem('lastUpdateTime', new Date().getTime());
+    const processEvents = (data) => {
+      window.localStorage.setItem('events', JSON.stringify(data));
+      let displayEvents = data.slice(0,6);
+      this.setState({
+        events: displayEvents,
+        loading: false
       })
-      .catch(err => console.log('ERROR:', err));
-      }
-    } else {
-      axios.get('/events')
-      .then(response => {
-        let displayEvents = response.data.slice(0,6);
-        this.setState({
-          events: displayEvents,
-          loading: false
-        })
-        window.localStorage.setItem('events', JSON.stringify(response.data));
-        window.localStorage.setItem('lastUpdateTime', new Date().getTime());
-      })
-      .catch(err => console.log('ERROR:', err));
     }
+
+    GetEvents('http://wwww.localhost:8000/events', processEvents);
   }
 
   render() {

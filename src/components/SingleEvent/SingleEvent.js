@@ -1,5 +1,7 @@
+// This is the primary component for the Single Event view.
 import React, { Component } from 'react';
 import axios from 'axios';
+import { ValidateCache } from '../GetEventData/ValidateCache';
 
 import UniversalHeader from '../Headers/UniversalHeader';
 import SingleEventContainer from './SingleEventContainer';
@@ -44,29 +46,28 @@ export default class SingleEvent extends Component {
     }
   }
 
+  // This is the same caching algorithm as the category and landing event previews.
+  // Rather than refreshing the batch if the event isn't found, it simply grabs
+  // the event by ID.
   componentWillMount() {
-    if (localStorage.getItem('lastUpdateTime') && localStorage.getItem('events')) {
-      let localStorageEvents = JSON.parse(localStorage.getItem('events'));
-      let currentEvent = {};
-      localStorageEvents.forEach((event) => {
-        if (event.id == this.props.params.id) { currentEvent = event }
-      })
-      if ( currentEvent ) {
-        this.setState({ event: currentEvent })
-      } else {
-        axios.get(`/events/${this.props.params.id}`)
-        .then((response) => {
-          this.setState({ event: response.data })
-        })
-        .catch(err => console.log('ERROR:', err));
-      }
-    } else {
-      axios.get(`/events/${this.props.params.id}`)
-      .then((response) => {
-        this.setState({ event: response.data })
-      })
-      .catch(err => console.log('ERROR:', err));
+    // Define events as event cache
+    let eventsCache = localStorage.getItem('events');
+    if (eventsCache) { eventsCache = JSON.parse(eventsCache)};
+    const cacheIsValid = ValidateCache();
+    console.log('cacheisvalid: ', cacheIsValid);
+
+    const filterEventFromCache = (arr) => {
+      return arr.filter(event => event.id === this.props.params.id)
     }
+    const cachedEvent = eventsCache ? filterEventFromCache(eventsCache)[0] : [];
+
+    const getEventFromAPI = (id) => {
+      console.log('fetch from API')
+      axios.get(`http://www.localhost:8000/events/${id}`)
+      .then(response => this.setState({ event: response.data }))
+    }
+
+    cachedEvent ? this.setState({ event: cachedEvent }) : getEventFromAPI(this.props.params.id);
 
     document.querySelector('body').scrollTop = 0;
   }

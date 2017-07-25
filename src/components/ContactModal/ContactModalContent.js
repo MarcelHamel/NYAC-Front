@@ -1,3 +1,6 @@
+// Contact modal form triggered by "Contact" link
+// in footer. See NYACFooter for functionality.
+
 import React from 'react';
 
 const ContactModalContent = (props) => {

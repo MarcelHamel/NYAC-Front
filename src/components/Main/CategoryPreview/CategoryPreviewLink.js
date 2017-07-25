@@ -1,3 +1,6 @@
+// This is the link button displayed in the category preview panel.
+// The link itself redirects to the category sort page.
+
 import React from 'react';
 import { Link } from 'react-router';
 

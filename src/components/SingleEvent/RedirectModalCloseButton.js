@@ -1,3 +1,4 @@
+// Deprecated. Holding onto it in case we want to reinstate it.
 import React from 'react';
 
 const RedirectModalCloseButton = (props) => {

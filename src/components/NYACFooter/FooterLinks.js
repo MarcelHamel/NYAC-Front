@@ -1,3 +1,7 @@
+// These are all of the footer links. You'll notice a mix of <Link> and <a> tags here.
+// Most of these pages were created by Corey and hosted at LeadPages, giving him a greater
+// ability to modify press and bio pages as necessary.
+
 import React from 'react';
 import { Link } from 'react-router';
 

@@ -1,3 +1,7 @@
+// This renders a map centered on the event venue.
+
+// Its important to note that if the page isn't fetched with https:// then it renders an error
+// as the map is loading. The condition render prevents this.
 import React from 'react';
 
 const VenueMap = (props) => {

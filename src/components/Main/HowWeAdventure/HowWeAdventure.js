@@ -1,3 +1,5 @@
+// This is the container for the "How We Adventure" section of the landing page.
+
 import React from 'react';
 
 import Discover from './Discover';

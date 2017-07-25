@@ -1,3 +1,4 @@
+// This was originally built to warn users that they'd be navigating to Eventbrite to purchase tickets. Deprecated. Keeping in case of change of heart.
 import React from 'react';
 
 import RedirectModalContent from './RedirectModalContent';

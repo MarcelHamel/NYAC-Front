@@ -1,3 +1,4 @@
+// This container comprises the bottom half of the event details container and includes the map, address and city.
 import React from 'react';
 
 import VenueDetailCity from './VenueDetailCity';

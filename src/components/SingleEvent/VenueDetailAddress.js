@@ -1,3 +1,4 @@
+// This component renders the event address in the lower half of the Ticket Info container.
 import React from 'react';
 
 const VenueDetailAddress = (props) => {

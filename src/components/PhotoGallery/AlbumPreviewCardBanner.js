@@ -1,3 +1,4 @@
+// This is the banner image for the Album Preview Card, similar to the Event Preview.
 import React from 'react';
 
 const AlbumPreviewCardBanner = (props) => {

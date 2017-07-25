@@ -1,3 +1,6 @@
+// Displays a single, high-res image.
+// Accessed via Album View.
+
 import React, { Component } from 'react';
 import axios from 'axios';
 

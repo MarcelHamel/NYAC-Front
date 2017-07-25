@@ -1,3 +1,5 @@
+// Displays title in event preview card.
+
 import React from 'react';
 
 const EventPreviewTitle = (props) => {

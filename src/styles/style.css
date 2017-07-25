@@ -610,6 +610,11 @@ nav a:hover {
   right: .33em;
 }
 
+.deposit-only-ticket {
+  height: 40px;
+  width: 40px;
+}
+
 /*******************************/
 /*        Testimonials         */
 /*******************************/
@@ -1472,6 +1477,19 @@ footer {
 }
 
 @media (max-width: 833px) {
+  #logo, #landing-logo {
+    height: 112px;
+    min-width: 150px;
+  }
+
+  #landing-logo {
+  background-image: url('../images/logos/logotranswhite.png');
+  }
+
+  #logo {
+    background-image: url('../images/logos/logotransgold.png');
+  }
+
   #hamburger-container {
     display: flex;
   }
@@ -1653,19 +1671,6 @@ footer {
 }
 
 @media (max-width: 555px) {
-  #logo, #landing-logo {
-    height: 112px;
-    min-width: 150px;
-  }
-
-  #landing-logo {
-  background-image: url('../images/logos/logotranswhite.png');
-  }
-
-  #logo {
-    background-image: url('../images/logos/logotransgold.png');
-  }
-
   .category-scroll-arrow-box,
   #category-preview-link {
     transform: scale(0.7);

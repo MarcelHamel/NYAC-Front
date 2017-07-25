@@ -1,3 +1,5 @@
+// This component renders the Subscribe button in the NAV and anywhere else it might appear.
+// The buttonType prop set the id and ultimately styling of the button.
 import React, { Component } from 'react';
 
 export default class SubscriptionButton extends Component {
