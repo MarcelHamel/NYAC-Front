@@ -5,7 +5,7 @@ const GetEvents = (url, cb) => {
 
   // Define events as event cache
   let eventsCache = localStorage.getItem('events');
-  if (eventsCache) { eventsCache = JSON.parse(eventsCache)};
+  if (eventsCache) { eventsCache = JSON.parse(eventsCache)}
   const cacheIsValid = ValidateCache();
   console.log('cacheisvalid: ', cacheIsValid)
 

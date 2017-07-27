@@ -38,7 +38,7 @@ export default class CategoryPreview extends Component {
           title: 'HIDDEN SPOTS',
           text: 'Explore secrets hiding in plain sight.',
           image: hiddenspots,
-          linkTarget: '/catgories/Hidden Spots',
+          linkTarget: '/categories/Hidden Spots',
           linkTitle: 'Hidden Spots'
         },
         {

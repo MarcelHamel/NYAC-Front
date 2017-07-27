@@ -48,9 +48,10 @@ export default class CategorySort extends Component {
           return categories.includes(this.props.params.name);
         }
       })
+      const displayEventsArray = this.props.params.name === 'All' ? arr : filteredEvents;
       this.setState({
-        events: filteredEvents,
-        displayEvents: filteredEvents,
+        events: displayEventsArray,
+        displayEvents: displayEventsArray,
         loading: false
       })
     }

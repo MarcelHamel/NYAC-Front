@@ -9,7 +9,7 @@ const ValidateCache = () => {
   console.log("Cache TTL Valid?", cacheTTLValid);
   // Checks to see if events Cache exists.
   const cacheExists = localStorage.getItem('events');
-  console.log("Cache Exists?", cacheExists.length > 1);
+  console.log("Cache Exists?", cacheExists !== null && cacheExists.length > 1);
 
   return cacheExists && cacheTTLValid;
 }

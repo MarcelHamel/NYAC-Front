@@ -5,6 +5,7 @@ import React from 'react';
 import facebook from "../../images/social_media_icons/facebook.png"
 import instagram from "../../images/social_media_icons/instagram.png"
 import twitter from "../../images/social_media_icons/twitter.png"
+import meetup from "../../images/social_media_icons/meetup.png"
 
 const SocialMediaIcons = () => {
   return(
@@ -14,6 +15,9 @@ const SocialMediaIcons = () => {
       </a>
       <a href="https://www.instagram.com/nyadventureclub/" target="_blank">
         <img src={instagram} />
+      </a>
+      <a href="https://www.meetup.com/NewYorkAdventureClub/" target="_blank">
+        <img src={meetup} />
       </a>
       <a href="https://twitter.com/nyadventureclub" target="_blank">
         <img src={twitter} />
