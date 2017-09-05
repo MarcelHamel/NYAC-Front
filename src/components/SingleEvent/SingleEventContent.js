@@ -6,7 +6,9 @@ import React from 'react';
 // and one HTML string. The HTML string includes a tremendous amount of <SPAN> tags
 // which completely override our page formatting...
 const SingleEventContent = (props) => {
-  let content = props.description;
+  const description = props.description ? props.description.html : 'ERROR: Could not load event description.';
+
+  let content = description;
 
   // As long as Eventbrite is trying to ruin our styling...
   while (content.includes("STYLE=")) {
@@ -22,9 +24,11 @@ const SingleEventContent = (props) => {
   }
 
   // "dangerouslySetInnerHTML" is my middle name.
+    const name = props.name ? props.name.text : 'ERROR: Could not load event title.'
   return (
+
     <div id="single-event-content">
-      <h1>{props.name}</h1>
+      <h1>{name}</h1>
       <div dangerouslySetInnerHTML={{__html: content}}></div>
     </div>
   )

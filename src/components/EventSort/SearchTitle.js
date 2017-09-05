@@ -1,3 +1,5 @@
+// Displays search term on SearchEvents page.
+
 import React from 'react';
 
 const SearchTitle = (props) => {

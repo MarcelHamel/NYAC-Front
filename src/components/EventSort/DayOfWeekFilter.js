@@ -1,3 +1,5 @@
+// HTML "select" Element to set DayOfWeek filter
+
 import React from 'react';
 
 const TimeOfWeekFilter = (props) => {

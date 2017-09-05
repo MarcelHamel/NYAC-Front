@@ -185,6 +185,17 @@ header {
   font-size: 3em;
 }
 
+.category-headline {
+  text-align: center;
+  position: relative;
+  top: 2em;
+  font-size: 2em;
+  margin: 0 auto;
+  padding: 0.5em;
+  text-shadow: 4px 4px 4px rgba(0,0,0,0.8);
+  background: none;
+}
+
 /*******************************/
 /*        2a. NAV BAR          */
 /*******************************/
@@ -1500,6 +1511,15 @@ footer {
 
   #nav-subscribe-button {
     display: none;
+  }
+
+  .category-headline {
+    text-align: center;
+    position: relative;
+    top: 1em;
+    font-size: 1.5em;
+    max-width: 560px;
+    margin: 0 auto;
   }
 
   #event-search-bar {

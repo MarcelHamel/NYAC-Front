@@ -1,3 +1,5 @@
+// HTML "select" Element to set TimeOfDay filter
+
 import React from 'react';
 
 const TimeOfDayFilter = (props) => {

@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
+import CategoryHeadline from './CategoryHeadline';
 
 export default class UniversalHeader extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export default class UniversalHeader extends Component {
       <header id="universal-header" style={{backgroundImage: `url(${this.props.image})`}}>
         <div className="header-overlay">
           <Nav name={this.props.name} />
+          <CategoryHeadline category={this.props.category} description={this.props.description} />
         </div>
       </header>
     )

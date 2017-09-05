@@ -1,3 +1,5 @@
+// Renders category title
+
 import React from 'react';
 
 const CategoryTitle = (props) => {

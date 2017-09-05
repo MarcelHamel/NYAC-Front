@@ -8,22 +8,11 @@ import EventTicketPriceRange from './EventTicketPriceRange';
 import EventStartDatetime from './EventStartDatetime';
 
 const TicketDetails = (props) => {
-  // Computes ticket availability
-  let availability = 0;
-  props.tickets.forEach((ticket) => {
-    availability += ticket.quantity_total;
-  })
-  availability = availability < props.capacity ? availability : props.capacity;
-  props.tickets.forEach((ticket) => {
-    // availability = (ticket.quantity_total - ticket.quantity_sold);
-    availability -= ticket.quantity_sold;
-  })
-
 
   return (
     <div className="ticket-details">
-      <EventRegistrationButton event_id={props.event_id} displayRedirectModal={props.displayRedirectModal} />
-      <EventTicketAvailability availability={availability} />
+      <EventRegistrationButton availability={props.availability} event_id={props.event_id} displayRedirectModal={props.displayRedirectModal} />
+      <EventTicketAvailability availability={props.availability} />
       <EventTicketPriceRange tickets={props.tickets} />
       <EventStartDatetime start={props.start} end={props.end}/>
     </div>

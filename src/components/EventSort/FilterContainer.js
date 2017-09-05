@@ -1,3 +1,5 @@
+// Container to hold all category filter menus.
+
 import React from 'react';
 
 import LocationFilter from './LocationFilter';

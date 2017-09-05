@@ -6,7 +6,6 @@ import EventPreviewCard from './EventPreviewCard';
 
 const EventPreviewCardContainer = (props) => {
   let eventCards = props.events.map((event) => {
-    console.log(event)
     if (event.id) {
       return <EventPreviewCard event={event} key={`event_id${event.id}`}/>
     }

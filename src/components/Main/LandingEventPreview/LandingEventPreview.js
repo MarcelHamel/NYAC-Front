@@ -31,7 +31,7 @@ export default class LandingEventPreview extends Component {
       })
     }
 
-    GetEvents('http://wwww.localhost:8000/events', processEvents);
+    GetEvents('/events', processEvents);
   }
 
   render() {

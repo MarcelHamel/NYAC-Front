@@ -20,6 +20,7 @@ export default class SingleEvent extends Component {
             url: ''
           }
         },
+        capacity: 0,
         start: {
           local: ''
         },
@@ -41,7 +42,8 @@ export default class SingleEvent extends Component {
             latitude: '',
             longitude: ''
           }
-        }
+        },
+        availability: 0
       }
     }
   }
@@ -52,32 +54,82 @@ export default class SingleEvent extends Component {
   componentWillMount() {
     // Define events as event cache
     let eventsCache = localStorage.getItem('events');
-    if (eventsCache) { eventsCache = JSON.parse(eventsCache)}
+    // Occasionally the cache is corrupted. Here's a try/catch function to avoid errors..
+    const IsJSONString = (str) => {
+      try {
+          JSON.parse(str);
+      } catch (e) {
+          console.error("Not a valid JSON string")
+          return false;
+      }
+      console.log("Valid JSON")
+      return true;
+    }
+    // If the cache is a valid JSON string, then return that parsed string.
+    // Else, return empty string.
+    eventsCache = IsJSONString(eventsCache) ? JSON.parse(eventsCache) : '';
     const cacheIsValid = ValidateCache();
-    console.log('cacheisvalid: ', cacheIsValid);
 
+    // Filter function to pull event from cache
     const filterEventFromCache = (arr) => {
       return arr.filter(event => event.id === this.props.params.id)
     }
-    const cachedEvent = eventsCache ? filterEventFromCache(eventsCache)[0] : [];
+    // Set 'cachedEvent' to empty array if cache is invalid
+    const cachedEvent = cacheIsValid ? filterEventFromCache(eventsCache)[0] : [];
 
-    const getEventFromAPI = (id) => {
-      console.log('fetch from API')
-      axios.get(`http://www.localhost:8000/events/${id}`)
-      .then(response => this.setState({ event: response.data }))
+    // Function to find ticket quantity
+    const findTicketQuantityAndDisplay = (displayEvent) => {
+      console.log(displayEvent.ticket_classes);
+      let availability = 0;
+      displayEvent.ticket_classes.forEach((ticket) => {
+        availability += ticket.quantity_total;
+        console.log('Availability: ', availability, ' plus qty:', ticket.quanity_total)
+      })
+      availability = availability < displayEvent.capacity ? availability : displayEvent.capacity;
+
+      displayEvent.ticket_classes.forEach((ticket) => {
+
+        availability -= ticket.quantity_sold;
+      })
+
+      console.log('availability', availability);
+      displayEvent.availability = availability;
+      console.log('ticketavail:' ,displayEvent.availability)
+
+      this.setState({ event: displayEvent })
     }
 
-    cachedEvent ? this.setState({ event: cachedEvent }) : getEventFromAPI(this.props.params.id);
+    // Callback to fetch event from API
+    const getEventFromAPI = (id) => {
+      console.log('fetch from API')
+      axios.get(`http://www.nyadventureclub.com/events/${id}`)
+      .then(response => {
+        findTicketQuantityAndDisplay(response.data)
+      })
+      .catch(err => console.log('Error retreiving event from Eventbrite API: ', err));
+    }
+
+    const handleCachedEvent = (cE) => {
+      findTicketQuantityAndDisplay(cE)
+    }
+
+    cacheIsValid ? handleCachedEvent(cachedEvent) : getEventFromAPI(this.props.params.id);
 
     document.querySelector('body').scrollTop = 0;
+
   }
 
+
   render() {
+    // If event doesn't have logo, display a default image.
+    const headerImage = this.state.event.logo ?
+                          this.state.event.logo.original.url :
+                          '../../images/about_page_hero.jpg';
 
     return(
       <div>
-        <UniversalHeader image={this.state.event.logo.original.url}/>
-        <SingleEventContainer event={this.state.event} displayRedirectModal={this.displayRedirectModal} />
+        <UniversalHeader image={headerImage}/>
+        <SingleEventContainer availability={this.state.event.availability} event={this.state.event} displayRedirectModal={this.displayRedirectModal} />
         <div className='mobile-venue-details'>
           <VenueDetails venue={this.state.event.venue} />
         </div>

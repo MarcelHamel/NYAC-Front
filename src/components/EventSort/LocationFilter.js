@@ -1,6 +1,6 @@
+// Select HTML element to sort Location
+
 import React from 'react';
-
-
 
 const LocationFilter = (props) => {
   return(

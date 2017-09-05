@@ -9,7 +9,7 @@ const SingleEventTicketInfo = (props) => {
 
   return (
     <div id="single-event-ticket-info">
-      <TicketDetails capacity={props.capacity} tickets={props.tickets} start={props.start} end={props.end} event_id={props.event_id} displayRedirectModal={props.displayRedirectModal} />
+      <TicketDetails availability={props.availability} capacity={props.capacity} tickets={props.tickets} start={props.start} end={props.end} event_id={props.event_id} displayRedirectModal={props.displayRedirectModal} />
       <div className='desktop-venue-details'>
         <VenueDetails venue={props.venue} />
       </div>

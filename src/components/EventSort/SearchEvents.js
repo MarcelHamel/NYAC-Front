@@ -1,3 +1,8 @@
+// This search events component is virtually identical to the category filter page.
+// The crucial difference between the two is the SearchEvents is handed an array of
+// events provided by the Eventbrite API's search endpoint, where CategorySort receives
+// the next 100 upcoming events.
+
 import React, { Component } from 'react';
 import axios from 'axios';
 
