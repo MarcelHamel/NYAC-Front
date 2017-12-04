@@ -72,7 +72,7 @@ export default class SingleEvent extends Component {
 
     // Filter function to pull event from cache
     const filterEventFromCache = (arr) => {
-      return arr.filter(event => event.id === this.props.params.id)
+      return arr.filter(event => event && event.id === this.props.params.id)
     }
     // Set 'cachedEvent' to empty array if cache is invalid
     const cachedEvent = cacheIsValid ? filterEventFromCache(eventsCache)[0] : [];

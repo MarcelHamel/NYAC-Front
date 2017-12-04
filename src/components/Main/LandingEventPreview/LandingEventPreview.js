@@ -24,7 +24,8 @@ export default class LandingEventPreview extends Component {
   componentDidMount() {
     const processEvents = (data) => {
       window.localStorage.setItem('events', JSON.stringify(data));
-      let displayEvents = data.slice(0,6);
+      let displayEvents = data.filter(item => item)
+                              .slice(0,6);
       this.setState({
         events: displayEvents,
         loading: false
